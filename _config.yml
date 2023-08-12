@@ -57,9 +57,9 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : @fayelhassan
+  username               : "@fayelhassan"
 facebook:
-  username               :
+  username               :"fay.now"
   app_id                 :
   publisher              :
 og_image                 :  # Open Graph/Twitter default site image
