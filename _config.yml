@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Fay Elhassan Homepage"
+title                    : "Fay's Homepage"
 title_separator          : "-"
 name                     : &name "Fay Majid Elhassan"
 description              : &description "personal description"
@@ -81,7 +81,7 @@ analytics:
 # Site Author
 author:
   name             : "Fay Majid Elhassan"
-  avatar           : "Fay wb.png"
+  avatar           : "images/Fay wb.png"
   bio              : "Reinforcement Learning "
   location         : "M'bour Senegal"
   employer         : "African Institute of Mathematical Sciences-Senegal"
