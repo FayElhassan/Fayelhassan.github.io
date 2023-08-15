@@ -86,7 +86,7 @@ author:
   location         : "M'bour Senegal"
   employer         : "AIMS-Senegal"
   pubmed           : # "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : #"https://scholar.google.com/citations?hl=en&user=CKPMvWUAAAAJ"
+  googlescholar    : "https://scholar.google.com/citations?hl=en&user=CKPMvWUAAAAJ"
   email            : "elhassan@aimsammi.org"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
