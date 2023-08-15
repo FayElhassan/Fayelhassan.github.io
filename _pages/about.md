@@ -52,7 +52,7 @@ Thank you for visiting my homepage. Let's continue to explore, learn, and create
 
 ---
 
-**Contact:** [email@example.com](mailto:elhassan@aimsammi.org) • **Phone:** +221776713798
+**Contact:** [Email](mailto:elhassan@aimsammi.org) • **Phone:** +221776713798
 
 **Address:** M'bour, Thiès Region, Senegal
 
