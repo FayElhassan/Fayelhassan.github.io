@@ -1,15 +1,13 @@
 ---
-title: "Paper Title Number 3"
+title: "An Economic Evaluation of Islanded Microgrids Implementation in Northern Kordofan State"
 collection: publications
-permalink: /publication/2015-10-01-paper-title-number-3
-excerpt: 'This paper is about the number 3. The number 4 is left for future work.'
-date: 2015-10-01
-venue: 'Journal 1'
-paperurl: 'http://academicpages.github.io/files/paper3.pdf'
-citation: 'Your Name, You. (2015). &quot;Paper Title Number 3.&quot; <i>Journal 1</i>. 1(3).'
+permalink: /publication/economic-evaluation-islanded-microgrids
+excerpt: 'This research aims to introduce a solution to Sudan’s inadequate electricity supply, focusing on current unconnected electricity grid users tackling the high cost of connecting rural regions to Sudan’s national grid.'
+date: 2021-02-26
+venue: '2020 International Conference on Computer, Control, Electrical, and Electronics Engineering (ICCCEEE)'
+paperurl: 'https://ieeexplore.ieee.org/abstract/document/9429680'
+citation: 'Fay Elhassan, Moayad ELamin, Mahmoud A Manzoul. (2021). &quot;An Economic Evaluation of Islanded Microgrids Implementation in Northern Kordofan State.&quot; <i>2020 ICCCEEE</i>. Pages 1-5. Publisher: IEEE.'
 ---
-This paper is about the number 3. The number 4 is left for future work.
 
-[Download paper here](http://academicpages.github.io/files/paper3.pdf)
-
-Recommended citation: Your Name, You. (2015). "Paper Title Number 3." <i>Journal 1</i>. 1(3).
+This research aims to introduce a solution to Sudan’s inadequate electricity supply, focusing on current unconnected electricity grid users tackling the high cost of connecting rural regions to Sudan’s national grid. This paper introduces islanded microgrids as a viable option to create new distributed grids that depend solely on renewable energy for electricity generation. In this study, an economic evaluation was conducted for three different microgrids located in western Sudan to provide the economic viability of hybrid islanded microgrid to encourage the system’s implementation. The proposed system was simulated using MATLAB=SIMULINK with the addition of machine learning techniques for power stability and quality enhancement, along with the calculated economic dispatch. The research showed that microgrid, unlike the utility grid, can provide a fixed electricity cost over the lifetime. Moreover, ML techniques provided …
+[Download paper here](https://ieeexplore.ieee.org/abstract/document/9429680)
