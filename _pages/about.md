@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Welcome to Fay Majid Elhassan's Homepage"
+title: "# 👋 Welcome to My Homepage!"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
@@ -9,7 +9,7 @@ redirect_from:
 ---
 ---
 
-# 👋 Welcome to My Homepage!
+
 
 ## About Me
 
@@ -52,10 +52,4 @@ Thank you for visiting my homepage. Let's continue to explore, learn, and create
 
 ---
 
-**Contact:** [Email](mailto:elhassan@aimsammi.org) • **Phone:** +221776713798
-
-**Address:** M'bour, Thiès Region, Senegal
-
-© 2023 Fay Majid Elhassan. All rights reserved.
-
----
+**Contact:** [Email](mailto:elhassan@aimsammi.org) 
