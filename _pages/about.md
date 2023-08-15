@@ -13,9 +13,13 @@ redirect_from:
 
 ## About Me
 
-Hello! I'm Fay Majid Elhassan, a passionate and dedicated professional with expertise in various fields, including Data Science, Research, Project Management, and more. My journey has been marked by a commitment to excellence, continuous learning, and a strong desire to make a positive impact in the world of technology and beyond. 🚀
+Hello! I'm Fay Majid Elhassan, a passionate and dedicated professional in the field of IT. Currently, I'm pursuing my master's degree at AIMS Senegal as part of the African Master of Machine Intelligence (AMMI) program, sponsored by Google and Facebook. My journey has been marked by a commitment to excellence, continuous learning, and a strong desire to make a positive impact in the world of technology and beyond. 🚀
 
-I have a background in Electrical and Electronics Engineering and have further specialized in areas such as Data Science, Machine Learning, and SAP Consulting. My journey has taken me across different roles and responsibilities, from being a Data Scientist and Project Manager at DAL Group to my involvement with professional organizations like IEEE and Arab Women in Computing.
+I have a background in Electrical and Electronics Engineering, and I have further specialized in areas such as Data Science, Machine Learning, and SAP Consulting. My journey has taken me across different roles and responsibilities, from being a Data Scientist and Project Manager at DAL Group to my involvement with professional organizations like IEEE and Arab Women in Computing.
+
+## Pursuing Sustainable Solutions through Technology
+
+Currently, my research interests are focused on exploring novel applications to solve real-world problems. I'm taking steps to develop sustainable and resilient systems by leveraging Reinforcement Learning and multimodalities. I believe that technology has the power to address critical challenges and provide lasting solutions that benefit society as a whole.
 
 ## Areas of Expertise
 
