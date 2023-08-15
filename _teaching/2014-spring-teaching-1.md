@@ -3,7 +3,8 @@ title: "Teaching Assistant at University of Khartoum"
 collection: teaching
 type: "Undergraduate courses"
 permalink: /teaching/2021-teaching-assistant
-venue: "[University of Khartoum](https://en.wikipedia.org/wiki/University_of_Khartoum), Department"
+venue: [University of Khartoum](https://en.wikipedia.org/wiki/University_of_Khartoum
+Department: Electrical and Electronic Engineering
 date: 2021-02-01
 location: "Khartoum, Sudan"
 ---
