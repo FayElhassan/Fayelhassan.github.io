@@ -1,8 +1,7 @@
-
 ---
 layout: archive
 title: "CV"
-permalink: /files/Fay_Resume-3.pdf
+permalink: /cv/
 author_profile: true
 redirect_from:
   - /resume
