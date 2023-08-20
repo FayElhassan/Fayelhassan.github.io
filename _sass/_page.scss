@@ -15,7 +15,7 @@
   left: 50%;          // Centers the container
   right: 50%;         // Centers the container
   margin-left: -50vw; // Counteracts the left positioning
-  margin-right: -50vw; // Counteracts the right positioning
+  margin-right: 50vw; // Counteracts the right positioning
 
 
   @include breakpoint($x-large) {
