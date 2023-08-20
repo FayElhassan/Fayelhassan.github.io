@@ -2,6 +2,8 @@
    MASTHEAD
    ========================================================================== */
 
+$mustard-grey: #8C7A57;  // Defining mustard grey color
+
 .masthead {
   position: relative;
   border-bottom: 1px solid $border-color;
@@ -10,6 +12,7 @@
   -webkit-animation-delay: 0.15s;
           animation-delay: 0.15s;
   z-index: 20;
+  background: linear-gradient(90deg, lighten($mustard-grey, 10%), darken($mustard-grey, 5%));
 
   &__inner-wrap {
     @include container;
@@ -27,17 +30,30 @@
 
     a {
       text-decoration: none;
+      color: $mustard-grey;
+      transition: color 0.3s;
+
+      &:hover {
+        color: darken($mustard-grey, 10%);
+      }
     }
   }
 }
 
 .masthead__menu {
-
   ul {
     margin: 0;
     padding: 0;
     clear: both;
     list-style-type: none;
+  }
+
+  li {
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: lighten($mustard-grey, 15%);
+    }
   }
 }
 
@@ -45,6 +61,11 @@
   display: block;
   list-style-type: none;
   white-space: nowrap;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   &--lg {
     padding-right: 2em;
