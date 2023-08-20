@@ -14,8 +14,10 @@
   padding-left: 2em;
   padding-right: 2em;
   font-family: $sans-serif;
-  animation: intro 0.3s both;
-  animation-delay: 0.30s;
+  -webkit-animation: intro 0.3s both;
+          animation: intro 0.3s both;
+  -webkit-animation-delay: 0.30s;
+          animation-delay: 0.30s;
 
   @include breakpoint($large) {
     padding-left: 1em;
@@ -42,18 +44,13 @@
 
   li {
     display: inline;
-    transition: color 0.3s;
-
-    &:hover {
-      color: $link-color-hover;
-    }
   }
 
   .current {
     font-weight: bold;
-    border-bottom: 2px solid $primary-color;
   }
 }
+
 
 /*
    Post pagination navigation links
@@ -76,7 +73,6 @@
     display: block;
     float: left;
     margin-left: -1px;
-    transition: background-color 0.3s;
 
     a {
       margin-bottom: 0.25em;
@@ -93,7 +89,6 @@
 
       &:hover {
         color: $link-color-hover;
-        background-color: $lighter-gray;
       }
 
       &.current {
@@ -139,11 +134,9 @@
     color: mix(#fff, $gray, 50%);
     border: 1px solid $light-gray;
     border-radius: $border-radius;
-    transition: background-color 0.3s;
 
     &:hover {
       color: $link-color-hover;
-      background-color: $lighter-gray;
     }
 
     &:first-child {
@@ -174,6 +167,7 @@
   border-top: 1px solid $border-color;
 }
 
+
 /*
    Priority plus navigation
    ========================================================================== */
@@ -182,7 +176,6 @@
   position: relative;
   min-width: 250px;
   background: $background-color;
-  transition: all 0.3s;
 
   a {
     display: block;
@@ -193,7 +186,6 @@
 
     &:hover {
       color: $masthead-link-color-hover;
-      background-color: $lighter-gray;
     }
   }
 
@@ -207,11 +199,6 @@
     background-color: $primary-color;
     color: #fff;
     cursor: pointer;
-    transition: background-color 0.3s;
-
-    &:hover {
-      background-color: darken($primary-color, 10%);
-    }
   }
 
   .visible-links {
@@ -235,8 +222,92 @@
         }
       }
     }
+
+    a {
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 4px;
+        background: mix(#fff, $primary-color, 50%);
+        width: 100%;
+        -webkit-transition: $global-transition;
+        transition: $global-transition;
+        -webkit-transform: scaleX(0);
+            -ms-transform: scaleX(0);
+                transform: scaleX(0); /* hide*/
+      }
+
+      &:hover:before {
+        -webkit-transform: scaleX(1);
+            -ms-transform: scaleX(1);
+                transform: scaleX(1); /* reveal*/
+      }
+    }
+  }
+
+  .hidden-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 15px;
+    padding: 5px;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(#000, 0.25);
+
+    a {
+      margin: 0;
+      padding: 10px 20px;
+      font-size: $type-size-5;
+
+      &:hover {
+        color: $masthead-link-color-hover;
+        background: mix(#fff, $primary-color, 75%);
+      }
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: -11px;
+      right: 10px;
+      width: 0;
+      border-style: solid;
+      border-width: 0 10px 10px;
+      border-color: $border-color transparent;
+      display: block;
+      z-index: 0;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: -10px;
+      right: 10px;
+      width: 0;
+      border-style: solid;
+      border-width: 0 10px 10px;
+      border-color: #fff transparent;
+      display: block;
+      z-index: 1;
+    }
+
+    li {
+      display: block;
+      border-bottom: 1px solid $border-color;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
   }
 }
+
 
 /*
    Navigation list
@@ -253,11 +324,9 @@
     display: block;
     padding: 0.125em 0;
     color: inherit;
-    transition: background-color 0.3s, color 0.3s;
 
     &:hover {
       text-decoration: underline;
-      background-color: $lighter-gray;
     }
   }
 
@@ -282,11 +351,6 @@
   font-family: $sans-serif-narrow;
   font-size: $type-size-5;
   font-weight: bold;
-  transition: color 0.3s, background-color 0.3s;
-
-  &:hover {
-    background-color: $lighter-gray;
-  }
 }
 
 .nav__sub-title {
@@ -298,12 +362,8 @@
   font-weight: bold;
   text-transform: uppercase;
   border-bottom: 1px solid $border-color;
-  transition: color 0.3s;
-
-  &:hover {
-    color: $link-color-hover;
-  }
 }
+
 
 /*
    Table of contents navigation
@@ -318,7 +378,6 @@
   border: 1px solid $border-color;
   border-radius: $border-radius;
   box-shadow: $box-shadow;
-  transition: all 0.3s;
 
   .nav__title {
     color: #fff;
@@ -326,10 +385,6 @@
     background: $primary-color;
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
-
-    &:hover {
-      background-color: darken($primary-color, 10%);
-    }
   }
 }
 
@@ -348,7 +403,6 @@
     font-weight: bold;
     line-height: 1.5;
     border-bottom: 1px solid $border-color;
-    transition: background-color 0.3s, color 0.3s;
 
     &:hover {
       color: #000;
