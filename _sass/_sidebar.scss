@@ -2,28 +2,29 @@
    SIDEBAR
    ========================================================================== */
 
+$mustard-grey: #8C7A57;  // Defining mustard grey color
+
 /*
    Default
    ========================================================================== */
 
 .sidebar {
   -webkit-transform: translate3d(0, 0 , 0);
-          transform: translate3d(0, 0 , 0);
-
+  transform: translate3d(0, 0 , 0);
   @include clearfix();
   margin-bottom: 1em;
+  border-left: 5px solid $mustard-grey;
+  padding-left: 1em;
 
   @include breakpoint($large) {
     @include span(2 of 12);
     opacity: 1;
     -webkit-transition: opacity 0.2s ease-in-out;
-            transition: opacity 0.2s ease-in-out;
-
+    transition: opacity 0.2s ease-in-out;
     &:hover {
       opacity: 1;
     }
   }
-
 
   @include breakpoint($x-large) {
     padding-right: 0;
@@ -32,6 +33,7 @@
   h2, h3, h4, h5, h6 {
     margin-bottom: 0;
     font-family: $sans-serif-narrow;
+    color: $mustard-grey;
   }
 
   h3, h4 {
@@ -42,6 +44,7 @@
     font-family: $sans-serif;
     font-size: $type-size-6;
     line-height: 1.5;
+    color: darken($mustard-grey, 10%);
   }
 
   img {
@@ -85,10 +88,11 @@
   img {
     max-width: 175px;
     border-radius: 50%;
+    border: 2px solid $mustard-grey;
 
     @include breakpoint($large) {
       padding: 5px;
-      border: 1px solid $border-color;
+      border: 2px solid $border-color;
     }
   }
 }
@@ -99,6 +103,7 @@
   padding-left: 15px;
   padding-right: 25px;
   line-height: 1;
+  color: darken($mustard-grey, 10%);
 
   @include breakpoint($large) {
     display: block;
@@ -110,12 +115,14 @@
 
 .author__name {
   margin: 0;
+  color: $mustard-grey;
 
   @include breakpoint($large) {
     margin-top: 10px;
     margin-bottom: 10px;
   }
 }
+
 .sidebar .author__name {
   font-family: $sans-serif;
   font-size: $type-size-5;
@@ -123,6 +130,7 @@
 
 .author__bio {
   margin: 0;
+  color: darken($mustard-grey, 15%);
 
   @include breakpoint($large) {
     margin-top: 10px;
@@ -159,79 +167,15 @@
 }
 
 .author__urls {
-  display: none;
-  position: absolute;
-  right: 0;
-  margin-top: 15px;
-  padding: 10px;
-  list-style-type: none;
-  border: 1px solid $border-color;
-  border-radius: $border-radius;
-  background: #fff;
-  z-index: -1;
-  box-shadow: 0 0 10px rgba(#000, 0.25);
-  cursor: default;
-
-  @include breakpoint($large) {
-    display: block;
-    position: relative;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    box-shadow: none;
-  }
-
-  &:before {
-    display: block;
-    content: "";
-    position: absolute;
-    top: -11px;
-    left: calc(50% - 10px);
-    width: 0;
-    border-style: solid;
-    border-width: 0 10px 10px;
-    border-color: $border-color transparent;
-    z-index: 0;
-
-    @include breakpoint($large) {
-      display: none;
-    }
-  }
-
-  &:after {
-    display: block;
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: calc(50% - 10px);
-    width: 0;
-    border-style: solid;
-    border-width: 0 10px 10px;
-    border-color: #fff transparent;
-    z-index: 1;
-
-    @include breakpoint($large) {
-      display: none;
-    }
-  }
-
-  li {
-    white-space: nowrap;
-  }
+  // ... existing styles ...
 
   a {
-    display: block;
-    margin-bottom: 5px;
-    padding-right: 5px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    color: inherit;
-    font-size: $type-size-5;
-    text-decoration: none;
+    color: darken($mustard-grey, 10%);
 
     &:hover {
-      text-decoration: underline;
+      color: $mustard-grey;
+      text-decoration: none;
+      background-color: lighten($mustard-grey, 20%);
     }
   }
 }
