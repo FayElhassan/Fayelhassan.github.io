@@ -10,6 +10,8 @@
   padding-right: 1em;
   animation: intro 0.3s both;
   animation-delay: 0.35s;
+  background-image: linear-gradient(to bottom, #FFDB58, #808080); // Mustard to Grey
+
 
   @include breakpoint($x-large) {
     max-width: $x-large;
