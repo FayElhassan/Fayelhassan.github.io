@@ -5,12 +5,20 @@
 #main {
   @include container;
   @include clearfix;
-  margin-top: 2em;
+  margin: 2em 0; // Adjusted margin
   padding-left: 1em;
   padding-right: 1em;
   animation: intro 0.3s both;
   animation-delay: 0.35s;
   background-image: linear-gradient(to bottom, #FFDB58, #808080); // Mustard to Grey
+  min-height: 100vh;  // Ensures the gradient fills the height of the viewport
+  width: 100vw;       // Ensures the gradient fills the width of the viewport
+  position: relative; // Ensures the gradient fills the width of the viewport
+  left: 50%;          // Centers the container
+  right: 50%;         // Centers the container
+  margin-left: -50vw; // Counteracts the left positioning
+  margin-right: -50vw; // Counteracts the right positioning
+
 
 
   @include breakpoint($x-large) {
