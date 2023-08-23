@@ -15,7 +15,9 @@ redirect_from:
 
 Hello! I'm Fay Majid Elhassan, a passionate and dedicated professional in the field of IT. Currently, I'm pursuing my master's degree at [AIMS Senegal](https://aims-senegal.org) as part of the African Master of Machine Intelligence (AMMI) program, sponsored by Google and Facebook. My journey has been marked by a commitment to excellence, continuous learning, and a strong desire to make a positive impact in the world of technology and beyond. 🚀
 
-I have a background in Electrical and Electronics Engineering, and I have further specialized in areas such as Data Science, Machine Learning, and SAP Consulting. My journey has taken me across different roles and responsibilities, from being a Data Scientist and Project Manager at DAL Group to my involvement with professional organizations like [IEEE](https://www.ieee.org) and Arab Women in Computing.
+I have a background in Electrical and Electronics Engineering, and I have further specialized in areas such as Data Science, Machine Learning, and SAP Consulting. My journey has taken me across different roles and responsibilities, from being a Data Scientist and Project Manager at DAL Group to my involvement with professional organizations like [IEEE](https://www.ieee.org) and Arab Women in Computing, Co-Founder WiMLDS Khartoum Chapter ,Organizer in Deep Learning Indaba as part of two committee for second year and a previous mentor at IndabaX Sudan.
+
+Certified Project Management Professional (PMP) since 2021 and a SAP Associate Consultant certified in various models.(Check Curriculm Vitae)
 
 ## Pursuing Sustainable Solutions through Technology
 
