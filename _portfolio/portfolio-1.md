@@ -1,6 +1,6 @@
 ---
 title: "Harnessing AI for Sustainable Agriculture and Climate Adaptation: PPO, A2C, and SAC"
-excerpt: "An in-depth exploration of using PPO, A2C, and SAC for greenhouse management. <br/><img src='/images/GreenhouseRL.png'>"
+excerpt: "An in-depth exploration of using PPO, A2C, and SAC for greenhouse management. <br/><img src='/images/Greenhouse.jpeg'>"
 collection: portfolio
 ---
 
