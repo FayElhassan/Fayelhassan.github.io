@@ -1,6 +1,6 @@
 ---
 title: "Microgrid Trading Using Reinforcement Learning"
-excerpt: "Management and control of a trading game between islanded microgrids using deep reinforcement learning. <br/><img src='/images/Microgri_en.png'>"
+excerpt: "Management and control of a trading game between islanded microgrids using deep reinforcement learning. <br/><img src='/images/Microgrid_en.png'>"
 collection: portfolio
 ---
 
