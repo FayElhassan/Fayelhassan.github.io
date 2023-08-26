@@ -1,6 +1,6 @@
 ---
 title: "Hybrid Recommendation Chatbot"
-excerpt: "An AI chatbot for personalized recommendations. <br/><img src='/images/HybridChatbot.png'>"
+excerpt: "An AI chatbot for personalized recommendations. <br/><img src='/images/the-chatbot-world.png'>"
 collection: portfolio
 ---
 
