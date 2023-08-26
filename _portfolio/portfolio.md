@@ -2,7 +2,7 @@
 title: "Hybrid Recommendation Chatbot"
 excerpt: "An AI chatbot for personalized recommendations. <br/><img src='/images/the-chatbot-world.png'>"
 collection: portfolio
----
+--- 
 
 ### Overview:
 A chatbot that employs a hybrid recommendation system combining content-based and collaborative filtering methods. Implemented using Python, Streamlit, and various machine learning libraries.
