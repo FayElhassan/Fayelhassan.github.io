@@ -1,7 +1,14 @@
 ---
-title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "Harnessing AI for Sustainable Agriculture and Climate Adaptation: PPO, A2C, and SAC"
+excerpt: "An in-depth exploration of using PPO, A2C, and SAC for greenhouse management. <br/><img src='/images/GreenhouseRL.png'>"
 collection: portfolio
 ---
 
-This is an item in your portfolio. It can be have images or nice text. If you name the file .md, it will be parsed as markdown. If you name the file .html, it will be parsed as HTML. 
+In this project, I conducted a comprehensive analysis of three Reinforcement Learning algorithms—PPO, A2C, and SAC—applied to greenhouse environments. I integrated these algorithms into a custom simulation framework designed to emulate real-world greenhouse conditions. The aim was to autonomously optimize parameters like water levels, temperature, and assimilation rates. The project was implemented using Python and the Stable Baselines3 library for the RL agents.
+
+I meticulously tracked my experiments using custom logging and TensorBoard to ensure reproducibility and analysis of results. The code for this groundbreaking project can be found [here](https://github.com/fayelhassan/GreenhouseRL).
+
+#To delve into the technical nitty-gritty and to share my findings, I authored an article submitted to the Journal of Precision Agriculture. You can find the #article [here](https://link-to-your-article).
+
+Moreover, I extended my work into a blog post aimed at a broader audience, covering the basics of Reinforcement Learning, the greenhouse simulation, and the real-world implications of the research. You can read the blog post [here](https://medium.com/@YourUsername/optimizing-greenhouses-with-rl-algorithms-ppos-a2c-and-sac).
+'''
