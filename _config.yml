@@ -82,12 +82,12 @@ analytics:
 author:
   name             : "Fay Majid Elhassan"
   avatar           : "Fay wb.png"
-  bio              : "Reinforcement Learning "
-  location         : "M'bour Senegal"
-  employer         : "AIMS-Senegal"
+  bio              : "Research/Machine Learning Engineer"
+  location         : "Tuebingen,Germany"
+  employer         : "Max Planck Institute-Intelligent Systems"
   pubmed           : # "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : "https://scholar.google.com/citations?hl=en&user=CKPMvWUAAAAJ"
-  email            : "elhassan@aimsammi.org"
+  email            : "fay.elhassan@tuebingen.mpg.de"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
