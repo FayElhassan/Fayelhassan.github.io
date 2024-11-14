@@ -1,4 +1,4 @@
-Here’s the revised portfolio entry with the requested information added:
+
 
 ---
 
