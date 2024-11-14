@@ -3,7 +3,7 @@
 ---
 
 title: "IEEE Region 8 Student Activities Official Website"  
-excerpt: "An in-depth exploration of my development work for the IEEE Region 8 Student Activities Official Website."  
+excerpt: "An in-depth exploration of my development work for the IEEE Region 8 Student Activities Official Website."  <br/><img src='/images/Microgrid_en.png'>"
 collection: portfolio  
 
 ---
