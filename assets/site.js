@@ -298,3 +298,17 @@ document.querySelectorAll(".tedx-player").forEach(function (btn) {
     io.observe(meet);
   } else load();
 })();
+
+// In-page links (#contact, #publications, …): scroll explicitly so they always land under the sticky menu
+document.addEventListener("click", function (e) {
+  var a = e.target.closest && e.target.closest('a[href^="#"]');
+  if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey) return;
+  var id = a.getAttribute("href").slice(1);
+  var target = id ? document.getElementById(id) : null;
+  if (!target) return;
+  e.preventDefault();
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var y = id === "top" ? 0 : target.getBoundingClientRect().top + window.scrollY - 72;
+  window.scrollTo({ top: Math.max(0, y), behavior: reduce ? "auto" : "smooth" });
+  if (history.pushState) history.pushState(null, "", "#" + id);
+});

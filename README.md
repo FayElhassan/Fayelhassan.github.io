@@ -9,3 +9,5 @@ Personal site of Fay Majid Elhassan, served by GitHub Pages as plain static file
 - Old URLs (`/publications/`, `/talks/`, `/portfolio/`, `/cv/`) redirect to sections of the homepage.
 
 Preview locally: `python3 -m http.server 8000`, then open http://localhost:8000
+
+After editing `assets/site.css` or `assets/site.js`, bump the `?v=` number on their links in `index.html` so browsers fetch the new files.

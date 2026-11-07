@@ -597,3 +597,15 @@ a.project-media { text-decoration: none; }
   .meet { margin: 26px 20px 0; }
   .meet-slot iframe { height: 760px; }
 }
+
+/* More breathing room between sections */
+.section { padding: clamp(110px, 11vw, 150px) 0 36px; }
+.section + .section, .wrap[aria-hidden="true"] + .section { scroll-margin-top: 72px; }
+.news { margin-top: 24px; }
+.confluence { margin: 40px 0 0; }
+.contact { margin-top: clamp(120px, 12vw, 160px); }
+.footer { margin-top: 24px; }
+@media (max-width: 760px) {
+  .section { padding: 88px 0 24px; }
+  .contact { margin-top: 96px; }
+}
