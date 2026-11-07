@@ -8,7 +8,7 @@
   --card: #fbf6ec;
   --ink: #2a1a12;         /* date-palm brown */
   --ink-2: #5b4637;
-  --ink-3: #8a7261;
+  --ink-3: #735d4d;
   --line: #e0cdb2;
   --accent: #a63d1f;      /* henna / Nubian terracotta */
   --accent-ink: #fff8ef;
@@ -337,3 +337,5 @@ a.project-media { text-decoration: none; }
   .tedx { grid-template-columns: 1fr; gap: 16px; padding: 12px 12px 20px; }
   .tedx-body { padding: 0 16px 0 4px; }
 }
+.lede + .lede { margin-top: 14px; }
+.project-media.glyph.logo img[src$=".svg"] { height: auto; width: 62%; max-width: 62%; padding: 18px 28px; }
