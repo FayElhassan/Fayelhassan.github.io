@@ -123,3 +123,137 @@ document.querySelectorAll(".tedx-player").forEach(function (btn) {
     });
   });
 })();
+
+// ================= Characters & the Nile journey =================
+(function () {
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var SVGNS = "http://www.w3.org/2000/svg";
+
+  // --- The confluence felucca (SMIL) pauses for reduced motion
+  if (reduce) document.querySelectorAll(".confluence").forEach(function (s) { if (s.pauseAnimations) s.pauseAnimations(); });
+
+  // --- Camel: walks the dune, jumps on click, and hops now and then on its own
+  var camel = document.querySelector(".camel");
+  var fig = document.querySelector(".hero-photo");
+  function sizeWalk() { if (camel && fig) camel.style.setProperty("--walk", Math.max(60, fig.clientWidth - camel.offsetWidth) + "px"); }
+  function jump() {
+    if (!camel || camel.classList.contains("jump")) return;
+    camel.classList.add("jump");
+    setTimeout(function () { camel.classList.remove("jump"); }, 720);
+  }
+  if (camel) {
+    sizeWalk(); addEventListener("resize", sizeWalk);
+    camel.addEventListener("click", jump);
+    if (!reduce) setInterval(function () { if (!document.hidden && Math.random() < .5) jump(); }, 6500);
+  }
+
+  // --- Section diamonds hop as each section arrives
+  if ("IntersectionObserver" in window && !reduce) {
+    var hopIO = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("hop"); hopIO.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -20% 0px" });
+    document.querySelectorAll(".section .kicker").forEach(function (k) { hopIO.observe(k); });
+  }
+
+  // --- Project cards tilt toward the pointer (mouse only)
+  if (!reduce && matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    document.querySelectorAll(".project").forEach(function (card) {
+      card.addEventListener("mousemove", function (e) {
+        var r = card.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+        card.style.transform = "perspective(800px) rotateY(" + (x * 6) + "deg) rotateX(" + (-y * 6) + "deg) translateY(-3px)";
+      });
+      card.addEventListener("mouseleave", function () { card.style.transform = ""; });
+    });
+  }
+
+  // --- The Nile: a winding river through the journey; a felucca sails it as you scroll
+  var nile = document.getElementById("nile");
+  if (!nile) return;
+  var svg = nile.querySelector(".nile-svg");
+  var parts = ["bank", "water", "flow", "progress"].map(function (n) { return svg.querySelector(".nile-" + n); });
+  var progress = parts[3];
+  var nodesG = svg.querySelector(".nile-nodes"), decorG = svg.querySelector(".nile-decor");
+  var boat = svg.querySelector(".nile-boat");
+  var stops = Array.prototype.slice.call(nile.querySelectorAll(".stop"));
+  var len = 0, nodeLens = [], nodeEls = [], boatScale = 1.3;
+
+  function centerY(el) { var r = el.getBoundingClientRect(), n = nile.getBoundingClientRect(); return r.top - n.top + r.height / 2; }
+  function lengthAtY(y) {               // river flows downward, so y grows with length
+    var lo = 0, hi = len;
+    for (var i = 0; i < 24; i++) { var mid = (lo + hi) / 2; if (progress.getPointAtLength(mid).y < y) lo = mid; else hi = mid; }
+    return lo;
+  }
+  function build() {
+    var W = nile.clientWidth, H = nile.clientHeight;
+    if (!W || !H) return;
+    svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+    var mobile = W < 700, cx = mobile ? 26 : W / 2, amp = mobile ? 10 : 64;
+    boatScale = mobile ? .72 : 1.3;
+    var pts = [centerY(nile.querySelector(".nile-source"))]
+      .concat(stops.map(function (s) { return centerY(s.querySelector(".stop-card")); }))
+      .concat([centerY(nile.querySelector(".nile-mouth"))]);
+    var d = "M" + cx + " " + pts[0], dir = 1, mids = [];
+    for (var i = 1; i < pts.length; i++) {
+      var y0 = pts[i - 1], y1 = pts[i], dy = y1 - y0, sx = cx + amp * dir;
+      d += " C" + sx + " " + (y0 + dy * .38) + " " + sx + " " + (y1 - dy * .38) + " " + cx + " " + y1;
+      mids.push({ x: cx + amp * dir * .75, y: (y0 + y1) / 2, dir: dir });
+      dir = -dir;
+    }
+    parts.forEach(function (p) { p.setAttribute("d", d); });
+    len = progress.getTotalLength();
+    progress.style.strokeDasharray = len;
+    nodesG.innerHTML = ""; decorG.innerHTML = ""; nodeEls = [];
+    nodeLens = stops.map(function (s, i) {
+      var y = pts[i + 1];
+      if (s.classList.contains("is-now")) {
+        var ring = document.createElementNS(SVGNS, "circle");
+        ring.setAttribute("class", "nile-node-ring"); ring.setAttribute("cx", cx); ring.setAttribute("cy", y); ring.setAttribute("r", 9);
+        nodesG.appendChild(ring);
+      }
+      var c = document.createElementNS(SVGNS, "circle");
+      c.setAttribute("class", "nile-node" + (s.classList.contains("is-now") ? " now" : ""));
+      c.setAttribute("cx", cx); c.setAttribute("cy", y); c.setAttribute("r", 7);
+      nodesG.appendChild(c); nodeEls.push(c);
+      return lengthAtY(y);
+    });
+    if (!mobile) stops.forEach(function (s, i) {   // date palms on the empty bank opposite each card
+      var side = i % 2 === 0 ? 1 : -1, y = pts[i + 1];
+      [0, 1].forEach(function (k) {
+        if (k && i % 2) return;
+        var h = k ? 44 : 62, w = h * 2 / 3;
+        var u = document.createElementNS(SVGNS, "use");
+        u.setAttribute("href", "#palm"); u.setAttribute("width", w); u.setAttribute("height", h);
+        u.setAttribute("x", cx + side * (120 + k * 46) - w / 2); u.setAttribute("y", y - h + 18 + k * 6);
+        u.setAttribute("class", "palm-sway"); u.style.animationDelay = (-(i + k) * .8) + "s";
+        decorG.appendChild(u);
+      });
+    });
+    update();
+  }
+  function update() {
+    if (!len) return;
+    var r = nile.getBoundingClientRect();
+    var t = Math.min(1, Math.max(0, (innerHeight * .55 - r.top) / r.height));
+    var L = t * len;
+    progress.style.strokeDashoffset = len - L;
+    var p = progress.getPointAtLength(L), q = progress.getPointAtLength(Math.min(len, L + 2));
+    var tilt = Math.max(-14, Math.min(14, Math.atan2(q.x - p.x, q.y - p.y) * -20));
+    var face = q.x < p.x ? -1 : 1;
+    boat.classList.add("on");
+    boat.setAttribute("transform", "translate(" + p.x + " " + (p.y + 2) + ") rotate(" + tilt + ") scale(" + (face * boatScale) + " " + boatScale + ")");
+    var current = -1;
+    nodeLens.forEach(function (nl, i) {
+      var reached = L >= nl - 4;
+      stops[i].classList.toggle("reached", reached);
+      nodeEls[i] && nodeEls[i].classList.toggle("reached", reached);
+      if (reached) current = i;
+    });
+    stops.forEach(function (s, i) { s.classList.toggle("current", i === current); });
+  }
+  var ticking = false;
+  addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(function () { ticking = false; update(); }); } }, { passive: true });
+  if ("ResizeObserver" in window) new ResizeObserver(function () { build(); }).observe(nile); else addEventListener("resize", build);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(build);
+  build();
+})();

@@ -26,6 +26,35 @@
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="felucca" viewBox="-30 -64 60 72">
+      <path class="f-sail" d="M-17 -7 L7 -61 L17 -7 Z"/>
+      <path class="f-yard" d="M-21 -3 L9 -63"/>
+      <path class="f-mast" d="M3 -4 V-48"/>
+      <path class="f-flag" d="M9 -63 l7 2 -7 3z"/>
+      <path class="f-hull" d="M-27 -4 H27 Q20 8 0 8 Q-20 8 -27 -4Z"/>
+      <path class="f-stripe" d="M-24 -1 H24"/>
+    </symbol>
+    <symbol id="palm" viewBox="0 0 40 60">
+      <path class="p-trunk" d="M21 58 C19 44 22 30 20 18"/>
+      <path class="p-leaf" d="M20 18 C12 10 4 12 0 18 C8 14 14 15 20 18Z M20 18 C28 10 36 12 40 18 C32 14 26 15 20 18Z M20 18 C16 6 10 2 4 4 C12 6 16 10 20 18Z M20 18 C24 6 30 2 36 4 C28 6 24 10 20 18Z M20 18 C20 8 22 2 20 0 C18 2 18 8 20 18Z"/>
+      <circle class="p-date" cx="18" cy="20" r="1.6"/><circle class="p-date" cx="22" cy="21" r="1.6"/>
+    </symbol>
+    <symbol id="camel" viewBox="0 0 90 64">
+      <g class="c-legs">
+        <path class="c-leg l1" d="M24 34 V60"/><path class="c-leg l2" d="M31 34 V60"/>
+        <path class="c-leg l3" d="M50 34 V60"/><path class="c-leg l4" d="M57 34 V60"/>
+      </g>
+      <path class="c-body" d="M14 30 C14 20 22 18 26 18 C30 8 42 8 44 18 C52 18 60 20 62 26 L70 14 C71 10 74 6 79 7 L86 9 C87 11 86 13 83 13 L79 13 L72 30 C70 37 62 38 56 38 L22 38 C17 38 14 35 14 30Z"/>
+      <path class="c-tail" d="M15 28 C10 30 9 36 10 40"/>
+      <path class="c-saddle" d="M27 19 C30 12 41 12 43 19 L45 31 L25 31Z"/>
+      <path class="c-tassel" d="M25 31 h20 M27 31 v4 M32 31 v4 M37 31 v4 M42 31 v4"/>
+      <circle class="c-eye" cx="80" cy="9.5" r="1"/>
+    </symbol>
+  </defs>
+</svg>
+
 <div class="nubian thin" aria-hidden="true"></div>
 
 <header class="nav" id="top">
@@ -75,6 +104,8 @@
       <path class="pyr" d="M96 566 140 396 184 566Z"/><path class="pyr-shade" d="M140 396 184 566H140Z"/>
       <path class="dune" d="M-20 548C100 530 220 566 340 550S520 538 640 552V600H-20Z"/>
     </svg>
+    <div class="birds" aria-hidden="true"><svg class="bird b1" viewBox="0 0 24 10"><path d="M0 6 Q6 0 12 6 Q18 0 24 6"/></svg><svg class="bird b2" viewBox="0 0 24 10"><path d="M0 6 Q6 0 12 6 Q18 0 24 6"/></svg><svg class="bird b3" viewBox="0 0 24 10"><path d="M0 6 Q6 0 12 6 Q18 0 24 6"/></svg></div>
+    <button class="camel" type="button" aria-label="Make the camel jump"><span class="camel-walk"><svg viewBox="0 0 90 64"><use href="#camel"/></svg></span></button>
     <img src="images/fay-portrait.jpg" alt="Fay Elhassan smiling at sunset by the sea" width="640" height="800">
     <figcaption><span class="art-label">Meroë pyramids, Sudan</span><span>Khartoum → Mbour → Tübingen → Lausanne</span></figcaption>
   </figure>
@@ -91,11 +122,13 @@
 </section>
 
 <div class="wrap" aria-hidden="true">
-  <svg class="confluence" viewBox="0 0 1120 64" preserveAspectRatio="xMidYMid meet">
+  <svg class="confluence" overflow="visible" viewBox="0 0 1120 64" preserveAspectRatio="xMidYMid meet">
     <path class="white" d="M0 58C160 58 300 52 420 44S540 36 560 36"/>
     <path class="blue" d="M0 8C150 8 290 16 410 26S540 36 560 36"/>
-    <path class="main" d="M560 36C680 36 760 22 860 26S1020 44 1120 34"/>
+    <path class="main" id="nile-main" d="M560 36C680 36 760 22 860 26S1020 44 1120 34"/>
     <circle class="node" cx="560" cy="36" r="6"/>
+    <g class="conf-boat"><use href="#felucca" x="-15" y="-34" width="30" height="36"/>
+      <animateMotion dur="26s" repeatCount="indefinite"><mpath href="#nile-main"/></animateMotion></g>
     <text x="24" y="24">Blue Nile</text><text x="24" y="50">White Nile</text>
     <text x="580" y="58">Al-Mogran · Khartoum</text><text x="1000" y="22">River Nile</text>
   </svg>
@@ -343,7 +376,7 @@
       <ul class="roles">
         <li><b>IEEE Sudan</b><span>Chairman · 2024–present</span></li>
         <li><b>Sankofa Initiative: STEM, What is in Hand? (IEEE Smart Village)</b><span>Co-founder and Chair of Communication &amp; Documentation · 2024–present</span></li>
-        <li><b>IEEE Region 8 Student Activities Committee</b><span>Publicity &amp; Communication Coordinator and past Chair of Digital Communications · 2024–25. I designed and built the <a href="https://r8.ieee.org/sac/">R8 SAC website</a>.</span></li>
+        <li><b>IEEE Region 8 Student Activities Committee</b><span>Communication &amp; Publicity Coordinator (2025–26) and past Chair of Digital Communications (2024–25). I designed and built the <a href="https://r8.ieee.org/sac/">R8 SAC website</a>.</span></li>
         <li><b>Deep Learning Indaba</b><span>Organiser for the main Indaba and adviser to IndabaX Sudan · 2022–25</span></li>
         <li><b>WiMLDS Khartoum</b><span>Co-founder of the Women in Machine Learning &amp; Data Science chapter · 2021–present</span></li>
         <li><b>Arab Women in Computing (ArabWIC)</b><span>Vice President</span></li>
@@ -354,6 +387,7 @@
       <h3 class="col-h">Talks &amp; panels</h3>
       <ul class="talks" data-collapse="5" data-label="talks &amp; panels">
         <li><time>2026</time><div><b>I Can't Believe It's Not Safer (spotlight talk)</b><span>ICBINB Workshop, ICLR 2026 · Rio de Janeiro, Brazil</span></div></li>
+        <li><time>2025</time><div><b><a href="https://ceusyp2025.ieee.org.tr/schedule/">IEEE Region 8 Women in Engineering Panel</a></b><span>Panelist with Hazar Oklah and Dr. Neylan Tokerler · IEEE R8 Central European Students &amp; Young Professionals Congress (CEuSYP'25), Istanbul</span></div></li>
         <li><time>2024</time><div><b><a href="https://grenoble-2024.ieeer8syp.org/program/workshops">Student Branch Vitality: Administration, Programs &amp; Recognition</a></b><span>Panel, IEEE Region 8 SAC · IEEE R8 Student &amp; Young Professionals Congress (SYP), Grenoble, France</span></div></li>
         <li><time>2024</time><div><b>Embedding Subtle Watermarks in Large Language Models</b><span>CaCTüS Scientific Symposium, Max Planck Institute for Intelligent Systems · Tübingen</span></div></li>
         <li><time>2023</time><div><b>AI for Sustainable Agriculture: Greenhouse Control Optimization</b><span>AMMI Scientific · Mbour, Senegal</span></div></li>
@@ -389,17 +423,27 @@
 <section id="journey" class="section wrap" aria-labelledby="journey-h">
   <div class="section-head">
     <p class="kicker">Journey</p>
-    <h2 id="journey-h">From control systems to clinical AI</h2>
+    <h2 id="journey-h">Following the Nile</h2>
+    <p class="section-sub">From control systems in Khartoum to clinical AI in Lausanne. Scroll to sail downstream.</p>
   </div>
-  <ol class="timeline">
-    <li><span class="when">2025–</span><div><b>Doctoral Assistant, EDIC PhD Program</b><span class="where">LiGHT Lab · EPFL, Lausanne, Switzerland</span><p>Research lead for MOOVE.</p></div></li>
-    <li><span class="when">2025</span><div><b>Master's Research Intern</b><span class="where">LiGHT Lab · EPFL</span><p>Antibiogo research with MSF.</p></div></li>
-    <li><span class="when">2024–25</span><div><b>Research Engineer</b><span class="where">Max Planck Institute for Intelligent Systems · Tübingen, Germany</span><p>LLM watermarking with Jonas Geiping and Antonio Orvieto.</p></div></li>
-    <li><span class="when">2023–24</span><div><b>M.Sc. Mathematics, Machine Learning (AMMI)</b><span class="where">African Institute for Mathematical Sciences · Mbour, Senegal</span><p>Supported by Google and Meta.</p></div></li>
-    <li><span class="when">2023–24</span><div><b>ML Engineer · Principal Technical Lead</b><span class="where">Q-Parts &amp; STEM-Away · Remote</span><p>LLM chatbots and AI pipelines.</p></div></li>
-    <li><span class="when">2021–23</span><div><b>Data Scientist → BI Specialist → Project Manager</b><span class="where">DAL Group · Khartoum, Sudan</span><p>Forecasting, analytics and procurement automation.</p></div></li>
-    <li><span class="when">2014–20</span><div><b>B.Sc. (Hons) Electrical &amp; Electronic Engineering</b><span class="where">University of Khartoum · Sudan</span></div></li>
-  </ol>
+  <div class="nile" id="nile">
+    <svg class="nile-svg" aria-hidden="true">
+      <path class="nile-bank"/><path class="nile-water"/><path class="nile-flow"/><path class="nile-progress"/>
+      <g class="nile-decor"></g><g class="nile-nodes"></g>
+      <g class="nile-boat"><g class="bob"><use href="#felucca" x="-30" y="-64" width="60" height="72"/></g></g>
+    </svg>
+    <p class="nile-source"><span>Al-Mogran, Khartoum</span>Where the Blue and White Nile meet</p>
+    <ol class="nile-stops">
+      <li class="stop"><div class="stop-card"><span class="stop-place">Khartoum</span><span class="when">2014–20</span><b>B.Sc. (Hons) Electrical &amp; Electronic Engineering</b><span class="where">University of Khartoum</span><p>Control systems, and my first RL papers on microgrids.</p></div></li>
+      <li class="stop"><div class="stop-card"><span class="stop-place">Khartoum</span><span class="when">2021–23</span><b>Data Scientist → BI Specialist → Project Manager</b><span class="where">DAL Group</span><p>Forecasting, analytics and procurement automation.</p></div></li>
+      <li class="stop"><div class="stop-card"><span class="stop-place">Remote</span><span class="when">2023–24</span><b>ML Engineer · Principal Technical Lead</b><span class="where">Q-Parts &amp; STEM-Away</span><p>LLM chatbots and AI pipelines.</p></div></li>
+      <li class="stop"><div class="stop-card"><span class="stop-place">Mbour, Senegal</span><span class="when">2023–24</span><b>M.Sc. Mathematics, Machine Learning (AMMI)</b><span class="where">African Institute for Mathematical Sciences</span><p>Supported by Google and Meta.</p></div></li>
+      <li class="stop"><div class="stop-card"><span class="stop-place">Tübingen, Germany</span><span class="when">2024–25</span><b>Research Engineer</b><span class="where">Max Planck Institute for Intelligent Systems</span><p>LLM watermarking with Jonas Geiping and Antonio Orvieto.</p></div></li>
+      <li class="stop"><div class="stop-card"><span class="stop-place">Lausanne, Switzerland</span><span class="when">2025</span><b>Master's Research Intern</b><span class="where">LiGHT Lab · EPFL</span><p>Antibiogo research with MSF.</p></div></li>
+      <li class="stop is-now"><div class="stop-card"><span class="stop-place">Lausanne, Switzerland</span><span class="when">2025–now</span><b>PhD Student (EDIC), Doctoral Assistant</b><span class="where">LiGHT Lab · EPFL</span><p>Research lead for MOOVE.</p></div></li>
+    </ol>
+    <p class="nile-mouth">…and the river keeps flowing.</p>
+  </div>
   <p class="certs"><b>Certifications</b> PMP (2021) · SAP Analytics Cloud (Planning) · SAP Analytics Cloud · SAP BW/4HANA <span class="sep">·</span> <b>Languages</b> English · Arabic · French</p>
 </section>
 
