@@ -601,3 +601,52 @@ h1, h2, h3 { font-weight: 500; letter-spacing: 0; }
   .themes-list dd { padding-top: 0; }
   .lede { font-size: 20px; }
 }
+
+/* ================= Fay, waving hello ================= */
+.me-wrap { position: relative; margin-bottom: -6px; animation: rise 1s .05s cubic-bezier(.2,.7,.2,1) both; }
+.me { display: block; padding: 0; border: 0; background: none; cursor: pointer; width: clamp(120px, 19vh, 176px); }
+.me-svg { width: 100%; height: auto; overflow: visible; display: block; }
+.me-hair { fill: #2a1c16; }
+.me-skin { fill: #b47c55; }
+.me-jacket { fill: #2c2730; }
+:root[data-theme="dark"] .me-jacket { fill: #3a3442; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .me-jacket { fill: #3a3442; } }
+.me-top { fill: url(#me-stripes); }
+.me-lapel { fill: none; stroke: #1b171d; stroke-width: 2; stroke-linejoin: round; }
+.me-bandana { fill: #1f1a1b; }
+.me-paisley path { fill: none; stroke: #f3ece4; stroke-width: 1.6; stroke-linecap: round; }
+.me-paisley circle { fill: #f3ece4; }
+.me-brow { fill: none; stroke: #2a1c16; stroke-width: 2.4; stroke-linecap: round; }
+.me-eye { fill: none; stroke: #2a1c16; stroke-width: 2.6; stroke-linecap: round; }
+.me-nose { fill: none; stroke: #8a5636; stroke-width: 1.8; stroke-linecap: round; }
+.me-mouth { fill: #7a2a1e; }
+.me-teeth { fill: #fffaf5; }
+.me-cheek { fill: #d9785f; opacity: .35; }
+.me-gold { fill: var(--saffron); }
+.me-gold-line { fill: none; stroke: var(--saffron); stroke-width: 1.6; }
+.me-sleeve { fill: none; stroke: #2c2730; stroke-width: 17; stroke-linecap: round; }
+:root[data-theme="dark"] .me-sleeve { stroke: #3a3442; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .me-sleeve { stroke: #3a3442; } }
+.me-finger { fill: none; stroke: #b47c55; stroke-width: 4.2; stroke-linecap: round; }
+.me-arm { transform-box: view-box; transform-origin: 160px 200px; }
+.me-arm.waving, .me.waving .me-arm { animation: wave 1.6s ease-in-out; }
+@keyframes wave { 0%, 100% { transform: rotate(0); } 15% { transform: rotate(-14deg); } 30% { transform: rotate(10deg); }
+  45% { transform: rotate(-14deg); } 60% { transform: rotate(10deg); } 75% { transform: rotate(-6deg); } }
+.me:hover .me-svg { animation: camel-step .8s ease-in-out infinite; }
+.me-bubble { position: absolute; left: calc(100% - 4px); top: 8px; white-space: nowrap; margin: 0;
+  background: var(--card); color: var(--ink); border: 1px solid var(--line); border-radius: 14px 14px 14px 3px;
+  padding: 7px 13px; font-family: var(--serif); font-size: 18px; line-height: 1.2;
+  transform-origin: 0 100%; animation: pop .5s 1.1s cubic-bezier(.3,1.6,.5,1) both; }
+.me-bubble [lang="ar"] { font-family: "Amiri", serif; font-weight: 700; color: var(--accent); margin-right: 4px; font-size: 20px; }
+.me-bubble.again { animation: pop .45s cubic-bezier(.3,1.6,.5,1) both; }
+@keyframes pop { from { transform: scale(.4); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@media (max-width: 600px) {
+  .me { width: 112px; }
+  .me-bubble { font-size: 15px; top: 0; }
+  .me-bubble [lang="ar"] { font-size: 17px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .me-wrap, .me-bubble, .me-arm, .me .me-svg { animation: none !important; }
+}
+:root[data-theme="dark"] .me-svg { filter: drop-shadow(0 0 1.5px rgba(243,233,216,.55)); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .me-svg { filter: drop-shadow(0 0 1.5px rgba(243,233,216,.55)); } }

@@ -240,3 +240,20 @@ document.querySelectorAll(".tedx-player").forEach(function (btn) {
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(build);
   build();
 })();
+
+// Fay waves hello on arrival, and again when clicked
+(function () {
+  var me = document.querySelector(".me");
+  if (!me) return;
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var bubble = document.querySelector(".me-bubble");
+  function wave() {
+    if (reduce) return;
+    me.classList.remove("waving"); void me.offsetWidth; me.classList.add("waving");
+  }
+  setTimeout(wave, 700);
+  me.addEventListener("click", function () {
+    wave();
+    if (bubble) { bubble.classList.remove("again"); void bubble.offsetWidth; bubble.classList.add("again"); }
+  });
+})();

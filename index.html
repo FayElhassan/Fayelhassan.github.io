@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap&text=%D9%81%D9%8A%D8%A1" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap&text=%D9%81%D9%8A%D8%A1%D8%A3%D9%87%D9%84%D8%A7%D9%8B" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <script type="application/ld+json">
@@ -86,6 +86,54 @@
 <!-- INTRO -->
 <section class="intro" aria-label="Fay Elhassan">
   <svg class="intro-sun" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="100"/></svg>
+  <div class="me-wrap">
+    <button class="me" type="button" aria-label="Fay waving hello">
+      <svg class="me-svg" viewBox="0 0 220 250" aria-hidden="true">
+        <defs>
+          <pattern id="me-stripes" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="#f3ece4"/><rect width="6" height="3" fill="#1d1a1c"/></pattern>
+        </defs>
+        <!-- hair, back -->
+        <path class="me-hair" d="M66 96 C60 66 84 54 110 54 C136 54 160 66 154 96 C162 136 166 178 160 206 C152 214 138 210 132 204 L88 204 C82 210 68 214 60 206 C54 178 58 136 66 96 Z"/>
+        <!-- jacket -->
+        <path class="me-jacket" d="M44 252 C44 204 66 182 110 180 C154 182 176 204 176 252 Z"/>
+        <path class="me-top" d="M92 184 L110 222 L128 184 Z"/>
+        <path class="me-lapel" d="M92 184 L110 222 L100 252 M128 184 L110 222 L120 252"/>
+        <!-- neck & necklace -->
+        <rect class="me-skin" x="101" y="160" width="18" height="26" rx="8"/>
+        <path class="me-gold-line" d="M100 184 Q110 194 120 184"/>
+        <g transform="translate(0 10)">
+        <!-- head -->
+        <ellipse class="me-skin" cx="110" cy="116" rx="35" ry="41"/>
+        <!-- hair, front strands -->
+        <path class="me-hair" d="M76 98 C68 130 68 168 78 196 L88 192 C80 164 80 132 84 104 Z"/>
+        <path class="me-hair" d="M144 98 C152 130 152 168 142 196 L132 192 C140 164 140 132 136 104 Z"/>
+        <!-- paisley bandana -->
+        <path class="me-bandana" d="M73 104 C70 74 88 62 110 62 C132 62 150 74 147 104 C136 92 124 86 110 86 C96 86 84 92 73 104 Z"/>
+        <g class="me-paisley">
+          <path d="M86 84 c-4 -2 -4 -8 1 -9 c4 0 5 5 1 6"/><path d="M106 72 c-4 -2 -4 -8 1 -9 c4 0 5 5 1 6"/><path d="M127 80 c-4 -2 -4 -8 1 -9 c4 0 5 5 1 6"/>
+          <circle cx="96" cy="78" r="1.4"/><circle cx="117" cy="74" r="1.4"/><circle cx="138" cy="88" r="1.4"/><circle cx="80" cy="94" r="1.4"/>
+        </g>
+        <!-- face -->
+        <path class="me-brow" d="M90 104 q7 -4 13 -1 M117 103 q6 -3 13 1"/>
+        <path class="me-eye" d="M91 116 q6 -6 12 0 M117 116 q6 -6 12 0"/>
+        <path class="me-nose" d="M110 118 q-3 8 2 9"/>
+        <path class="me-mouth" d="M94 132 Q110 152 126 132 Z"/>
+        <path class="me-teeth" d="M97 133 Q110 140 123 133 L122 136 Q110 142 98 136 Z"/>
+        <circle class="me-cheek" cx="88" cy="130" r="6"/><circle class="me-cheek" cx="132" cy="130" r="6"/>
+        <circle class="me-gold" cx="75" cy="128" r="3"/><circle class="me-gold" cx="145" cy="128" r="3"/>
+        </g>
+        <!-- waving arm -->
+        <g class="me-arm">
+          <path class="me-sleeve" d="M160 200 C176 184 186 162 190 138"/>
+          <g class="me-hand">
+            <ellipse class="me-skin" cx="192" cy="126" rx="10" ry="12"/>
+            <path class="me-finger" d="M185 118 v-10 M190 115 v-12 M195 115 v-11 M200 119 v-8"/>
+          </g>
+        </g>
+      </svg>
+    </button>
+    <p class="me-bubble" role="status"><span lang="ar" dir="rtl">أهلاً</span> Welcome!</p>
+  </div>
   <h1 class="intro-name">
     <span class="intro-en">Fay</span>
     <span class="intro-sep" aria-hidden="true"></span>
