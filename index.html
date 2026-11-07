@@ -17,7 +17,7 @@
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap&text=%D9%81%D9%8A%D8%A1%D8%A3%D9%87%D9%84%D8%A7%D9%8B" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
@@ -149,9 +149,12 @@
 <!-- HERO -->
 <section class="hero wrap" id="about">
   <div class="hero-text">
-    <h2 class="visually-hidden">About</h2>
+    <h2 class="hero-title">Safe, aligned AI, shaped <em>with</em> the people it serves.</h2>
     <p class="lede">I'm Fay (<i class="translit" lang="ar-Latn">fayʾ</i>, rhymes with “eye”) Majid Elhassan, a PhD student in Mary-Anne Hartley's <a href="https://www.light-laboratory.org/">LiGHT lab</a> at EPFL. I use <b>participatory design</b> to bring clinicians into AI <b>alignment and safety</b>, with evaluation as part of the same loop: the expert judgements that test a model also show us how to align it. I lead research on <a href="https://jointhemoove.org/"><b>MOOVE</b></a>.</p>
-    <p class="hero-links"><a href="mailto:fay.elhassan@epfl.ch">fay.elhassan@epfl.ch</a> <span aria-hidden="true">·</span> <a href="files/Fay_Majid_Elhassan_CV.pdf">CV</a></p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#publications">Read my work</a>
+      <a class="btn" href="mailto:fay.elhassan@epfl.ch">Get in touch</a>
+    </div>
     <ul class="socials" aria-label="Profiles">
       <li><a href="https://scholar.google.com/citations?hl=en&user=CKPMvWUAAAAJ" aria-label="Google Scholar"><svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14Zm0-24L0 9.5l4.84 3.92A9 9 0 0 1 12 10a9 9 0 0 1 7.16 3.42L24 9.5Z"/></svg>Scholar</a></li>
       <li><a href="https://github.com/FayElhassan" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>GitHub</a></li>
@@ -199,20 +202,38 @@
 <!-- RESEARCH -->
 <section id="research" class="section wrap" aria-labelledby="research-h">
   <div class="section-head">
-    <h2 id="research-h">Research</h2>
+    <p class="kicker">Research</p>
+    <h2 id="research-h">What I work on</h2>
   </div>
-  <dl class="themes-list">
-    <dt>Participatory clinical evaluation</dt><dd>Clinicians worldwide rate LLM answers to realistic cases on <a href="https://jointhemoove.org/"><b>MOOVE</b></a>, blind to the model. I turn those judgements into rankings and consensus.</dd>
-    <dt>Human-centred alignment &amp; safety</dt><dd>The answer clinicians prefer isn't always the safest. I study where the two diverge and what that means for aligning medical models.</dd>
-    <dt>Trustworthy &amp; open models</dt><dd>Inspectable Bayesian reasoning, fully auditable open clinical LLMs, and watermarks embedded in model weights.</dd>
-    <dt>Global health &amp; sustainability</dt><dd>Previously led <a href="https://www.antibiogo.org/"><b>Antibiogo</b></a> research with MSF. Earlier work: deep RL for microgrids in rural Sudan, greenhouse control and weather forecasting.</dd>
-  </dl>
+  <div class="themes">
+    <article class="theme-card">
+      <span class="theme-num">01</span>
+      <h3>Participatory clinical evaluation</h3>
+      <p>Clinicians worldwide rate LLM answers to realistic cases on <a href="https://jointhemoove.org/"><b>MOOVE</b></a>, blind to the model. I turn those judgements into rankings and consensus.</p>
+    </article>
+    <article class="theme-card">
+      <span class="theme-num">02</span>
+      <h3>Human-centred alignment &amp; safety</h3>
+      <p>The answer clinicians prefer isn't always the safest. I study where the two diverge and what that means for aligning medical models.</p>
+    </article>
+    <article class="theme-card">
+      <span class="theme-num">03</span>
+      <h3>Trustworthy &amp; open models</h3>
+      <p>Inspectable Bayesian reasoning, fully auditable open clinical LLMs, and watermarks embedded in model weights.</p>
+    </article>
+    <article class="theme-card">
+      <span class="theme-num">04</span>
+      <h3>Global health &amp; sustainability</h3>
+      <p>Previously led <a href="https://www.antibiogo.org/"><b>Antibiogo</b></a> research with MSF. Earlier work: deep RL for microgrids in rural Sudan, greenhouse control and weather forecasting.</p>
+    </article>
+  </div>
 </section>
 
 <!-- PUBLICATIONS -->
 <section id="publications" class="section wrap" aria-labelledby="pubs-h">
   <div class="section-head">
-    <h2 id="pubs-h">Publications</h2>
+    <p class="kicker">Publications</p>
+    <h2 id="pubs-h">Papers &amp; preprints</h2>
     <p class="section-sub">* marks equal contribution. Full list on <a href="https://scholar.google.com/citations?hl=en&user=CKPMvWUAAAAJ">Google Scholar</a>.</p>
   </div>
 
@@ -313,7 +334,8 @@
 <!-- PROJECTS -->
 <section id="projects" class="section wrap" aria-labelledby="proj-h">
   <div class="section-head">
-    <h2 id="proj-h">Projects</h2>
+    <p class="kicker">Projects</p>
+    <h2 id="proj-h">Research projects &amp; things I've built</h2>
   </div>
   <div class="projects featured">
     <article class="project">
@@ -396,7 +418,9 @@
 <!-- COMMUNITY & TALKS -->
 <section id="community" class="section wrap" aria-labelledby="comm-h">
   <div class="section-head">
-    <h2 id="comm-h">Community &amp; talks</h2>
+    <p class="kicker">Community &amp; talks</p>
+    <h2 id="comm-h">Building rooms where more people belong</h2>
+    <p class="section-sub">Helping build the communities that made my own path possible.</p>
   </div>
   <article class="tedx">
     <button class="tedx-player" data-yt="1pfWImQaf_g" aria-label="Play TEDx talk: Women's Identity in Sudan">
@@ -448,7 +472,8 @@
 <!-- HONOURS -->
 <section id="honours" class="section wrap" aria-labelledby="hon-h">
   <div class="section-head">
-    <h2 id="hon-h">Honours</h2>
+    <p class="kicker">Honours</p>
+    <h2 id="hon-h">Awards &amp; recognition</h2>
   </div>
   <div class="awards">
     <div class="award"><span class="award-yr">2026</span><b>Spotlight paper (top 5%)</b><span>ICLR 2026 ICBINB Workshop · Rio de Janeiro</span></div>
@@ -462,8 +487,9 @@
 <!-- JOURNEY -->
 <section id="journey" class="section wrap" aria-labelledby="journey-h">
   <div class="section-head">
+    <p class="kicker">Journey</p>
     <h2 id="journey-h">Following the Nile</h2>
-    <p class="section-sub">From Khartoum to Lausanne, oldest first.</p>
+    <p class="section-sub">From control systems in Khartoum to clinical AI in Lausanne. Scroll to sail downstream.</p>
   </div>
   <div class="nile" id="nile">
     <svg class="nile-svg" aria-hidden="true">
@@ -488,15 +514,21 @@
 
 <!-- CONTACT -->
 <section id="contact" class="contact wrap" aria-labelledby="contact-h">
-  <h2 id="contact-h">Contact</h2>
-  <p>Email <a href="mailto:fay.elhassan@epfl.ch">fay.elhassan@epfl.ch</a>. I'm glad to hear about clinical AI evaluation, collaborations, mentoring, or ML communities in Africa and beyond.</p>
+  <div class="nubian" aria-hidden="true"></div>
+  <h2 id="contact-h">Let's talk<span>.</span></h2>
+  <p>I'm always happy to talk about clinical AI evaluation, research collaborations, mentoring, or building ML communities in Africa and around the world.</p>
+  <div class="hero-cta">
+    <a class="btn btn-primary" href="mailto:fay.elhassan@epfl.ch">fay.elhassan@epfl.ch</a>
+    <a class="btn" href="files/Fay_Majid_Elhassan_CV.pdf">Download CV</a>
+  </div>
 </section>
 
 </main>
 
 <footer class="footer wrap">
-  <span>© <span id="yr">2026</span> Fay Majid Elhassan · Lausanne</span>
-  <a href="#top">Top ↑</a>
+  <span>Made with love from Sudan.</span>
+  <span>© <span id="yr">2026</span> Fay Majid Elhassan</span>
+  <a href="#top">Back to top ↑</a>
 </footer>
 
 <script src="assets/site.js" defer></script>
