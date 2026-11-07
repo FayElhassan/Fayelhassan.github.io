@@ -100,7 +100,7 @@ document.querySelectorAll(".tedx-player").forEach(function (btn) {
       extra.forEach(function (el) { el.classList.toggle("is-collapsed", !open); });
       btn.setAttribute("aria-expanded", open);
       btn.innerHTML = open ? "Show less <span aria-hidden=\"true\">↑</span>"
-        : "Show " + extra.length + " more " + label + " <span aria-hidden=\"true\">↓</span>";
+        : (list.getAttribute("data-more") ? list.getAttribute("data-more") + " (" + extra.length + ")" : "Show " + extra.length + " more " + label) + " <span aria-hidden=\"true\">↓</span>";
     }
     list._setCollapsed = function (collapsed) { set(!collapsed); btn.hidden = false; };
     list._expandForFilter = function () { extra.forEach(function (el) { el.classList.remove("is-collapsed"); }); btn.hidden = true; };
