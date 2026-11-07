@@ -29,7 +29,11 @@
   // Nav border on scroll + active section
   var nav = document.querySelector(".nav");
   var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
-  function onScroll() { nav.classList.toggle("scrolled", window.scrollY > 8); }
+  var intro = document.querySelector(".intro");
+  function onScroll() {
+    nav.classList.toggle("scrolled", window.scrollY > 8);
+    if (intro) nav.classList.toggle("at-intro", intro.getBoundingClientRect().bottom > 140);
+  }
   onScroll(); window.addEventListener("scroll", onScroll, { passive: true });
 
   if ("IntersectionObserver" in window) {

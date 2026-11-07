@@ -93,8 +93,8 @@ p { margin: 0; }
   display: inline-flex; align-items: center; gap: 10px; }
 .eyebrow::before, .kicker::before { content: ""; width: 9px; height: 9px; background: var(--saffron); transform: rotate(45deg); flex: none;
   box-shadow: 13px 0 0 -2px var(--indigo); margin-right: 10px; }
-.hero h1 { font-size: clamp(38px, 5.4vw, 64px); font-weight: 400; }
-.hero h1 em { font-style: italic; color: var(--accent);
+.hero .hero-title { font-size: clamp(38px, 5.4vw, 64px); font-weight: 400; }
+.hero .hero-title em { font-style: italic; color: var(--accent);
   background: linear-gradient(transparent 72%, color-mix(in srgb, var(--saffron) 40%, transparent) 72%); padding: 0 .06em; }
 .lede { font-size: 19px; color: var(--ink-2); margin-top: 24px; max-width: 60ch; }
 .lede b { color: var(--ink); font-weight: 600; }
@@ -476,3 +476,43 @@ a.project-media { text-decoration: none; }
 .camel.jump .c-leg.l1, .camel.jump .c-leg.l4 { animation: leg .35s ease-in-out 2; }
 .camel.jump .c-leg.l2, .camel.jump .c-leg.l3 { animation: leg .35s ease-in-out 2 reverse; }
 .bird { animation-duration: 26s, .8s; }
+
+/* ================= Name intro ================= */
+.intro { position: relative; min-height: calc(100svh - 74px); display: grid; place-content: center; justify-items: center; text-align: center;
+  padding: 40px 16px 96px; overflow: hidden; isolation: isolate; }
+.intro-sun { position: absolute; z-index: -1; width: min(62vw, 520px); height: auto; left: 50%; top: 46%; transform: translate(-50%, -50%);
+  fill: color-mix(in srgb, var(--saffron) 22%, transparent); animation: sunrise 1.6s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes sunrise { from { transform: translate(-50%, -30%) scale(.85); opacity: 0; } to { transform: translate(-50%, -50%); opacity: 1; } }
+.intro-name { margin: 0; display: flex; align-items: center; justify-content: center; gap: clamp(18px, 3.5vw, 44px); line-height: 1;
+  font-weight: 400; }
+.intro-en { font-family: var(--serif); font-size: clamp(96px, 17vw, 220px); letter-spacing: -.03em; color: var(--ink);
+  animation: rise 1s .15s cubic-bezier(.2,.7,.2,1) both; }
+.intro-ar { font-family: "Amiri", "Noto Naskh Arabic", serif; font-weight: 700; font-size: clamp(100px, 17vw, 220px); color: var(--accent);
+  line-height: 1.2; padding-bottom: .12em; animation: rise 1s .45s cubic-bezier(.2,.7,.2,1) both; }
+.intro-sep { width: 12px; height: 12px; background: var(--saffron); transform: rotate(45deg); flex: none; box-shadow: 0 0 0 6px color-mix(in srgb, var(--saffron) 25%, transparent);
+  animation: fade .8s .35s both; }
+.intro-sub { margin-top: 18px; font-family: var(--sans); font-size: clamp(13px, 1.4vw, 16px); font-weight: 600; letter-spacing: .32em;
+  text-transform: uppercase; color: var(--ink-2); animation: fade 1s .8s both; }
+.intro-cue { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); display: grid; justify-items: center; gap: 2px;
+  color: var(--ink-3); text-decoration: none; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; animation: fade 1s 1.2s both; }
+.intro-cue svg { width: 34px; height: 40px; animation: bob 3.2s ease-in-out infinite; }
+.intro-cue:hover { color: var(--accent); }
+@keyframes rise { from { transform: translateY(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+.hero { padding-top: 48px; }
+
+/* The nav name waits until you scroll past the big one */
+.brand { transition: opacity .35s, transform .35s; }
+.nav.at-intro .brand { opacity: 0; transform: translateY(-6px); pointer-events: none; }
+.nav.at-intro { border-bottom-color: transparent; }
+
+@media (max-width: 600px) {
+  .intro-name { flex-direction: column; gap: 6px; }
+  .intro-sep { width: 9px; height: 9px; }
+  .intro-sub { letter-spacing: .24em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .intro-sun, .intro-en, .intro-ar, .intro-sep, .intro-sub, .intro-cue, .intro-cue svg { animation: none !important; }
+}
+.intro-ar { position: relative; top: -.08em; }
+.intro-sub { margin-top: clamp(26px, 4vw, 44px); }
