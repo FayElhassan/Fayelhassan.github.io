@@ -62,16 +62,8 @@ p { margin: 0; }
 
 /* ---------- Nubian pattern band ----------
    Stacked triangles in indigo / saffron / henna, like painted Nubian house friezes. */
-.nubian {
-  height: 12px;
-  background:
-    linear-gradient(135deg, var(--indigo) 25%, transparent 25%) 0 0 / 24px 12px,
-    linear-gradient(225deg, var(--indigo) 25%, transparent 25%) 0 0 / 24px 12px,
-    linear-gradient(315deg, var(--saffron) 25%, transparent 25%) 12px 0 / 24px 12px,
-    linear-gradient(45deg, var(--saffron) 25%, transparent 25%) 12px 0 / 24px 12px,
-    var(--accent);
-}
-.nubian.thin { height: 8px; background-size: 16px 8px; }
+.nubian { height: 16px; background: #a63d1f url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2216%22%20viewBox%3D%220%200%2040%2016%22%3E%3Crect%20width%3D%2240%22%20height%3D%2216%22%20fill%3D%22%23a63d1f%22/%3E%3Cpath%20d%3D%22M0%200h8l-4%204zM32%200h8l-4%204zM0%2016h8l-4-4zM32%2016h8l-4-4z%22%20fill%3D%22%23d8952a%22/%3E%3Cpath%20d%3D%22M11%208%2020%201.5%2029%208%2020%2014.5z%22%20fill%3D%22%2323408e%22/%3E%3Cpath%20d%3D%22M16.5%208%2020%205.4%2023.5%208%2020%2010.6z%22%20fill%3D%22%23f5ecdd%22/%3E%3Cpath%20d%3D%22M19%208%2020%207.2%2021%208%2020%208.8z%22%20fill%3D%22%23d8952a%22/%3E%3Ccircle%20cx%3D%220%22%20cy%3D%228%22%20r%3D%221.7%22%20fill%3D%22%23f5ecdd%22/%3E%3Ccircle%20cx%3D%2240%22%20cy%3D%228%22%20r%3D%221.7%22%20fill%3D%22%23f5ecdd%22/%3E%3Cpath%20d%3D%22M4%208h3M33%208h3%22%20stroke%3D%22%23f5ecdd%22%20stroke-width%3D%221%22/%3E%3C/svg%3E") repeat-x 0 0 / 40px 16px; }
+.nubian.thin { height: 10px; background-size: 25px 10px; }
 
 /* NAV */
 .nav { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--bg) 88%, transparent);
@@ -466,3 +458,21 @@ a.project-media { text-decoration: none; }
   .camel, .camel svg, .c-leg, .bird, .bob, .palm-sway, .nile-flow, .nile-node-ring { animation: none !important; }
   .birds { display: none; }
 }
+
+/* Arabic name */
+.brand .ar { font-family: "Amiri", "Noto Naskh Arabic", serif; font-weight: 700; font-size: 22px; color: var(--accent); margin-inline-start: 8px; line-height: 1; }
+.ar-inline { font-family: "Amiri", "Noto Naskh Arabic", serif; font-weight: 700; font-size: 1.12em; color: var(--accent); }
+
+/* Doum palm */
+.p-fan { fill: var(--nile); }
+.p-rib { stroke: color-mix(in srgb, var(--nile) 50%, #000); stroke-width: .7; stroke-linecap: round; opacity: .7; }
+.p-trunk { stroke-width: 3.2; }
+
+/* Calmer characters: the camel stands until someone says hi */
+.camel { animation: none; left: 6%; }
+.camel svg { animation: none; }
+.c-leg.l1, .c-leg.l2, .c-leg.l3, .c-leg.l4 { animation: none; }
+.camel:hover svg { animation: camel-step .9s ease-in-out infinite; }
+.camel.jump .c-leg.l1, .camel.jump .c-leg.l4 { animation: leg .35s ease-in-out 2; }
+.camel.jump .c-leg.l2, .camel.jump .c-leg.l3 { animation: leg .35s ease-in-out 2 reverse; }
+.bird { animation-duration: 26s, .8s; }

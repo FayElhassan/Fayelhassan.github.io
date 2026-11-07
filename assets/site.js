@@ -144,7 +144,6 @@ document.querySelectorAll(".tedx-player").forEach(function (btn) {
   if (camel) {
     sizeWalk(); addEventListener("resize", sizeWalk);
     camel.addEventListener("click", jump);
-    if (!reduce) setInterval(function () { if (!document.hidden && Math.random() < .5) jump(); }, 6500);
   }
 
   // --- Section diamonds hop as each section arrives
@@ -221,7 +220,7 @@ document.querySelectorAll(".tedx-player").forEach(function (btn) {
       var side = i % 2 === 0 ? 1 : -1, y = pts[i + 1];
       [0, 1].forEach(function (k) {
         if (k && i % 2) return;
-        var h = k ? 44 : 62, w = h * 2 / 3;
+        var h = k ? 62 : 88, w = h * 70 / 82;
         var u = document.createElementNS(SVGNS, "use");
         u.setAttribute("href", "#palm"); u.setAttribute("width", w); u.setAttribute("height", h);
         u.setAttribute("x", cx + side * (120 + k * 46) - w / 2); u.setAttribute("y", y - h + 18 + k * 6);
