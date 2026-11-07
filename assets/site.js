@@ -150,26 +150,6 @@ document.querySelectorAll(".tedx-player").forEach(function (btn) {
     camel.addEventListener("click", jump);
   }
 
-  // --- Section diamonds hop as each section arrives
-  if ("IntersectionObserver" in window && !reduce) {
-    var hopIO = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("hop"); hopIO.unobserve(e.target); } });
-    }, { rootMargin: "0px 0px -20% 0px" });
-    document.querySelectorAll(".section .kicker").forEach(function (k) { hopIO.observe(k); });
-  }
-
-  // --- Project cards tilt toward the pointer (mouse only)
-  if (!reduce && matchMedia("(hover: hover) and (pointer: fine)").matches) {
-    document.querySelectorAll(".project").forEach(function (card) {
-      card.addEventListener("mousemove", function (e) {
-        var r = card.getBoundingClientRect();
-        var x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
-        card.style.transform = "perspective(800px) rotateY(" + (x * 6) + "deg) rotateX(" + (-y * 6) + "deg) translateY(-3px)";
-      });
-      card.addEventListener("mouseleave", function () { card.style.transform = ""; });
-    });
-  }
-
   // --- The Nile: a winding river through the journey; a felucca sails it as you scroll
   var nile = document.getElementById("nile");
   if (!nile) return;
