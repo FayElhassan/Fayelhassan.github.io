@@ -3,16 +3,16 @@
    saffron and the Nile; Nubian house-painting geometry; Meroë pyramids;
    the confluence of the Blue and White Nile at Khartoum. */
 :root {
-  --bg: #f5ecdd;          /* desert sand */
-  --bg-soft: #ecdfc9;
-  --card: #fbf6ec;
+  --bg: #f8ece6;          /* henna blush */
+  --bg-soft: #f1ddd3;
+  --card: #fffaf7;
   --ink: #2a1a12;         /* date-palm brown */
   --ink-2: #5b4637;
   --ink-3: #735d4d;
-  --line: #e0cdb2;
+  --line: #ebd3c7;
   --accent: #a63d1f;      /* henna / Nubian terracotta */
   --accent-ink: #fff8ef;
-  --accent-soft: #f3d9c6;
+  --accent-soft: #f6d5c6;
   --indigo: #23408e;      /* Nubian door indigo */
   --indigo-soft: #dfe4f3;
   --saffron: #d8952a;     /* saffron & sunset */
