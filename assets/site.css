@@ -566,3 +566,34 @@ a.project-media { text-decoration: none; }
 }
 :root[data-theme="dark"] .me-svg { filter: drop-shadow(0 0 1.5px rgba(243,233,216,.55)); }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .me-svg { filter: drop-shadow(0 0 1.5px rgba(243,233,216,.55)); } }
+
+/* ================= Contact: notes, cards, meeting ================= */
+.contact { text-align: left; padding-bottom: 40px; }
+.contact h2 { text-align: center; }
+.contact-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; padding: 34px 48px 8px; align-items: start; }
+.contact-notes h3 { font-family: var(--serif); font-size: 21px; font-weight: 600; color: #fff; margin: 0 0 8px; }
+.contact-notes h3:not(:first-child) { margin-top: 24px; }
+.contact .contact-notes p { margin: 0; padding: 0; max-width: none; color: #e6dccb; font-size: 16px; }
+.contact-notes .btn { margin-top: 26px; }
+.contact-cards { display: grid; gap: 12px; }
+.c-card { display: grid; grid-template-columns: 22px 1fr auto; gap: 14px; align-items: center; padding: 14px 18px; border-radius: 12px;
+  background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16); color: #fff; text-decoration: none; transition: background .2s, border-color .2s; }
+.c-card:hover { background: rgba(255,255,255,.13); border-color: var(--saffron); }
+.c-card svg { width: 20px; height: 20px; fill: #fff; }
+.c-card svg.stroke, .meet h3 svg.stroke { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linejoin: round; stroke-linecap: round; }
+.c-card small { display: block; font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--saffron); margin-bottom: 1px; }
+.c-card span:not(.c-arrow) { font-size: 15px; overflow-wrap: anywhere; }
+.c-arrow { color: rgba(255,255,255,.6); transition: transform .2s; }
+.c-card:hover .c-arrow { transform: translateX(3px); color: var(--saffron); }
+.meet { margin: 30px 48px 0; padding-top: 26px; border-top: 1px solid rgba(255,255,255,.16); }
+.meet h3 { display: flex; align-items: center; gap: 10px; font-family: var(--sans); font-size: 13px; font-weight: 600; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--saffron); margin: 0 0 14px; }
+.meet h3 svg { width: 18px; height: 18px; color: var(--saffron); }
+.contact .meet-fallback { margin: 0; padding: 0; color: #e6dccb; font-size: 16px; max-width: none; }
+.meet-fallback a { color: #fff; }
+.meet-slot iframe { display: block; width: 100%; height: 640px; border: 0; border-radius: 12px; background: #fff; }
+@media (max-width: 760px) {
+  .contact-grid { grid-template-columns: 1fr; padding: 28px 20px 4px; gap: 28px; }
+  .meet { margin: 26px 20px 0; }
+  .meet-slot iframe { height: 760px; }
+}

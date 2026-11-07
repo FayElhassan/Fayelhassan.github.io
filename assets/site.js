@@ -277,3 +277,24 @@ document.querySelectorAll(".tedx-player").forEach(function (btn) {
     if (bubble) { bubble.classList.remove("again"); void bubble.offsetWidth; bubble.classList.add("again"); }
   });
 })();
+
+// Meeting calendar: set data-cal="your-name/30min" on #meet to embed Cal.com; until then the email fallback shows
+(function () {
+  var meet = document.getElementById("meet");
+  if (!meet) return;
+  var slug = (meet.getAttribute("data-cal") || "").trim().replace(/^https?:\/\/(app\.)?cal\.com\//, "");
+  if (!slug) return;
+  var slot = meet.querySelector(".meet-slot");
+  function load() {
+    var dark = (document.documentElement.getAttribute("data-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")) === "dark";
+    var f = document.createElement("iframe");
+    f.src = "https://app.cal.com/" + slug + "/embed?theme=" + (dark ? "dark" : "light");
+    f.title = "Book a meeting with Fay Elhassan";
+    f.loading = "lazy";
+    slot.replaceChildren(f);
+  }
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { io.disconnect(); load(); } }, { rootMargin: "400px" });
+    io.observe(meet);
+  } else load();
+})();
