@@ -82,3 +82,44 @@ document.querySelectorAll(".tedx-player").forEach(function (btn) {
     btn.replaceWith(wrap);
   }, { once: true });
 });
+
+// "Show more" for long lists: <el data-collapse="N" data-label="talks">
+(function () {
+  var lists = document.querySelectorAll("[data-collapse]");
+  lists.forEach(function (list) {
+    var n = parseInt(list.getAttribute("data-collapse"), 10);
+    var items = Array.prototype.slice.call(list.children);
+    if (items.length <= n) return;
+    var label = list.getAttribute("data-label") || "items";
+    var extra = items.slice(n);
+    var btn = document.createElement("button");
+    btn.type = "button"; btn.className = "show-more";
+    if (!list.id) list.id = "list-" + label;
+    btn.setAttribute("aria-controls", list.id);
+    function set(open) {
+      extra.forEach(function (el) { el.classList.toggle("is-collapsed", !open); });
+      btn.setAttribute("aria-expanded", open);
+      btn.innerHTML = open ? "Show less <span aria-hidden=\"true\">↑</span>"
+        : "Show " + extra.length + " more " + label + " <span aria-hidden=\"true\">↓</span>";
+    }
+    list._setCollapsed = function (collapsed) { set(!collapsed); btn.hidden = false; };
+    list._expandForFilter = function () { extra.forEach(function (el) { el.classList.remove("is-collapsed"); }); btn.hidden = true; };
+    btn.addEventListener("click", function () {
+      var open = btn.getAttribute("aria-expanded") !== "true";
+      set(open);
+      if (!open) list.scrollIntoView({ block: "nearest" });
+    });
+    list.insertAdjacentElement("afterend", btn);
+    set(false);
+  });
+
+  // Publication filters show every match; "All" returns to the collapsed list
+  var pubs = document.querySelector(".pubs");
+  document.querySelectorAll(".chip").forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      if (!pubs || !pubs._setCollapsed) return;
+      if (chip.getAttribute("data-filter") === "all") pubs._setCollapsed(true);
+      else pubs._expandForFilter();
+    });
+  });
+})();

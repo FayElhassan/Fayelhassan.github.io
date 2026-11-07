@@ -342,3 +342,10 @@ a.project-media { text-decoration: none; }
 }
 .lede + .lede { margin-top: 14px; }
 .project-media.glyph.logo img[src$=".svg"] { height: auto; width: 62%; max-width: 62%; padding: 18px 28px; }
+
+/* Show more */
+.is-collapsed { display: none !important; }
+.show-more { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; padding: 10px 18px; border-radius: 999px;
+  font: 500 14px var(--sans); color: var(--indigo); background: var(--indigo-soft); border: 1px solid transparent; cursor: pointer; }
+.show-more:hover { background: var(--indigo); color: var(--bg); }
+.projects + .show-more, .awards + .show-more { margin-top: 20px; }
