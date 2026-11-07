@@ -125,7 +125,10 @@ p { margin: 0; }
 .hero-art .dune { fill: color-mix(in srgb, var(--saffron) 35%, var(--bg)); }
 .hero-photo img { border-radius: 200px 200px var(--r) var(--r); aspect-ratio: 4/5; object-fit: cover; width: 74%; margin-left: auto; margin-right: 8px;
   box-shadow: 0 30px 60px -30px var(--shadow); border: 6px solid var(--card); outline: 2px solid var(--indigo); outline-offset: 6px; }
-.hero-photo figcaption { font-size: 13px; color: var(--ink-3); margin-top: 22px; text-align: right; letter-spacing: .04em; }
+.hero-photo figcaption { font-size: 13px; color: var(--ink-3); margin-top: 22px; letter-spacing: .04em;
+  display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.art-label { font-style: italic; color: var(--accent); display: inline-flex; align-items: center; gap: 8px; }
+.art-label::before { content: ""; width: 7px; height: 7px; background: var(--saffron); transform: rotate(45deg); }
 
 /* ---------- Confluence divider: Blue Nile + White Nile meet at Khartoum ---------- */
 .confluence { display: block; width: 100%; height: 64px; margin: 8px 0; }
@@ -290,7 +293,7 @@ p { margin: 0; }
   body { font-size: 16px; }
   .hero { grid-template-columns: 1fr; padding: 40px 0 24px; }
   .hero-photo { order: -1; max-width: 300px; }
-  .hero-photo figcaption { font-size: 12px; text-align: left; }
+  .hero-photo figcaption { font-size: 12px; flex-direction: column; gap: 4px; }
   .lede { font-size: 17px; }
   .news { grid-template-columns: 1fr; gap: 12px; }
   .section { padding-top: 64px; }
