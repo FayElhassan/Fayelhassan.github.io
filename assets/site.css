@@ -516,3 +516,4 @@ a.project-media { text-decoration: none; }
 }
 .intro-ar { position: relative; top: -.08em; }
 .intro-sub { margin-top: clamp(26px, 4vw, 44px); }
+.translit { font-family: var(--serif); font-style: italic; color: var(--accent); }
