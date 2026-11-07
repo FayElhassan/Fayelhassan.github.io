@@ -5,7 +5,7 @@ permalink: /publication/enhancing-energy-trading-microgrids
 excerpt: 'This paper tackles the problem of rural electrification and the lack of grid connection to large areas of Sudan.'
 date: 2021-02-26
 venue: '2020 International Conference on Computer, Control, Electrical, and Electronics Engineering (ICCCEEE)'
-paperurl: '[https://ieeexplore.ieee.org/abstract/document/9429584]'
+paperurl: 'https://ieeexplore.ieee.org/abstract/document/9429584'
 citation: 'Moayad ELamin, Fay Elhassan, Mahmoud A Manzoul. (2021). &quot;Enhancing Energy Trading Between Different Islanded Microgrids.&quot; <i>2020 ICCCEEE</i>. Pages 1-6. Publisher: IEEE.'
 ---
 
