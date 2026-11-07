@@ -306,3 +306,34 @@ p { margin: 0; }
   .confluence text { display: none; }
   .footer { flex-direction: column; }
 }
+
+/* Project logo cover + link rows */
+a.project-media { text-decoration: none; }
+.project-media.glyph.logo img { width: auto; height: 62%; max-width: 70%; object-fit: contain; background: #fff; padding: 14px 26px; border-radius: 14px;
+  box-shadow: 0 0 0 2px var(--c), 0 10px 24px -14px var(--shadow); }
+.more-row { margin-top: auto; display: flex; flex-wrap: wrap; gap: 18px; }
+.talks b a { color: inherit; text-decoration: none; }
+.talks b a:hover { color: var(--accent); }
+
+/* TEDx feature */
+.tedx { display: grid; grid-template-columns: 1.15fr 1fr; gap: 36px; align-items: center; margin: 0 0 56px;
+  background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 18px; position: relative; overflow: hidden; }
+.tedx::after { content: ""; position: absolute; right: 0; top: 0; bottom: 0; width: 10px;
+  background: linear-gradient(135deg, var(--accent) 25%, transparent 25%) 0 0 / 10px 20px, linear-gradient(45deg, var(--accent) 25%, transparent 25%) 0 10px / 10px 20px, var(--saffron); }
+.tedx-player { position: relative; display: block; padding: 0; border: 0; border-radius: 12px; overflow: hidden; cursor: pointer; aspect-ratio: 16/9; background: #000; width: 100%; }
+.tedx-player img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s, filter .3s; filter: saturate(.95); }
+.tedx-player:hover img { transform: scale(1.03); filter: saturate(1.1); }
+.tedx-player iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.play { position: absolute; left: 50%; top: 50%; width: 72px; height: 72px; margin: -36px 0 0 -36px; border-radius: 50%;
+  background: #e62b1e; display: grid; place-items: center; box-shadow: 0 10px 30px rgba(0,0,0,.4); transition: transform .2s; }
+.tedx-player:hover .play { transform: scale(1.08); }
+.play svg { width: 32px; height: 32px; fill: #fff; margin-left: 4px; }
+.tedx-body { display: flex; flex-direction: column; gap: 12px; padding: 8px 28px 8px 0; }
+.tedx-kicker { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.tedx-logo { color: #e62b1e; font-weight: 800; letter-spacing: 0; text-transform: none; font-size: 15px; margin-right: 4px; }
+.tedx h3 { font-size: clamp(26px, 3vw, 34px); font-style: italic; font-weight: 400; }
+.tedx-body > p:not(.tedx-kicker) { color: var(--ink-2); }
+@media (max-width: 760px) {
+  .tedx { grid-template-columns: 1fr; gap: 16px; padding: 12px 12px 20px; }
+  .tedx-body { padding: 0 16px 0 4px; }
+}

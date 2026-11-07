@@ -66,3 +66,19 @@
 
   var yr = document.getElementById("yr"); if (yr) yr.textContent = new Date().getFullYear();
 })();
+
+// TEDx: load the YouTube player only when asked (privacy-enhanced domain)
+document.querySelectorAll(".tedx-player").forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    var id = btn.getAttribute("data-yt");
+    var f = document.createElement("iframe");
+    f.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0";
+    f.title = "Women's Identity in Sudan | Fay Elhassan | TEDxUniversityofKhartoum";
+    f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    f.allowFullscreen = true;
+    var wrap = document.createElement("div");
+    wrap.className = "tedx-player";
+    wrap.appendChild(f);
+    btn.replaceWith(wrap);
+  }, { once: true });
+});
