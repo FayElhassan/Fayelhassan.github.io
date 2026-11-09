@@ -609,3 +609,12 @@ a.project-media { text-decoration: none; }
   .section { padding: 88px 0 24px; }
   .contact { margin-top: 96px; }
 }
+
+/* Research-area tags under the name */
+.intro-tags { list-style: none; margin: 22px 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 820px;
+  animation: fade 1s 1s both; }
+.intro-tags a { display: inline-block; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--card);
+  color: var(--ink-2); font-size: 13px; font-weight: 500; letter-spacing: .02em; text-decoration: none; transition: border-color .2s, color .2s, background .2s; }
+.intro-tags a:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+@media (max-width: 600px) { .intro-tags { gap: 8px; } .intro-tags a { font-size: 12px; padding: 6px 12px; } }
+@media (prefers-reduced-motion: reduce) { .intro-tags { animation: none !important; } }
