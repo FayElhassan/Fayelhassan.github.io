@@ -659,3 +659,58 @@ a.project-media { text-decoration: none; }
 .project-body .more + .from-lab { margin-top: -2px; }
 :root[data-theme="dark"] .from-lab img { filter: brightness(1.25); }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .from-lab img { filter: brightness(1.25); } }
+
+/* ================= Small-screen polish ================= */
+.from-lab { padding: 6px 0; }
+.footer a { display: inline-block; padding: 8px 0; }
+@media (max-width: 600px) {
+  .intro { padding: 24px 16px 28px; min-height: calc(100svh - 74px); align-content: center; }
+  /* keep the name on one line: Fay ◆ فيء */
+  .intro-name { flex-direction: row; gap: 14px; }
+  .intro-en { font-size: clamp(64px, 21vw, 104px); }
+  .intro-ar { font-size: clamp(66px, 21vw, 106px); }
+  .intro-sep { width: 8px; height: 8px; }
+  .intro-sub { margin-top: 18px; font-size: 12px; }
+  .intro-tags { margin-top: 16px; }
+  .intro-cue { position: static; transform: none; margin: 18px auto 0; }
+  .intro-cue svg { width: 28px; height: 34px; }
+  .intro-sun { width: min(78vw, 320px); }
+  /* character with the greeting above her head, so it never runs off the edge */
+  .me-wrap { margin-top: 30px; margin-bottom: 2px; }
+  .me { width: 96px; }
+  .me-bubble { left: 50%; top: -34px; transform: translateX(-50%); font-size: 14px; padding: 6px 11px; border-radius: 12px 12px 12px 12px; transform-origin: 50% 100%; }
+  .me-bubble [lang="ar"] { font-size: 16px; }
+  @keyframes pop-centre { from { transform: translateX(-50%) scale(.4); opacity: 0; } to { transform: translateX(-50%) scale(1); opacity: 1; } }
+  .me-bubble { animation-name: pop-centre; }
+  .me-bubble.again { animation-name: pop-centre; }
+}
+/* short, wide screens (phones turned sideways, small laptops) */
+@media (max-height: 560px) and (min-width: 601px) {
+  .intro { padding-top: 20px; padding-bottom: 20px; }
+  .me { width: 92px; }
+  .intro-en, .intro-ar { font-size: clamp(72px, 22vh, 140px); }
+  .intro-sub { margin-top: 12px; }
+  .intro-tags { margin-top: 12px; }
+  .intro-cue { position: static; transform: none; margin: 12px auto 0; }
+}
+
+.stop-lab { padding: 4px 0; min-height: 30px; }
+.me-wrap { margin-bottom: 0; }
+@media (max-height: 780px) and (min-width: 601px) {
+  .me { width: clamp(96px, 17vh, 140px); }
+  .intro-en, .intro-ar { font-size: clamp(88px, 22vh, 176px); }
+  .intro-sub { margin-top: 16px; }
+  .intro-tags { margin-top: 14px; }
+  .intro-cue { bottom: 14px; }
+}
+@media (max-height: 560px) and (min-width: 601px) {
+  .me { width: 64px; }
+  .me-bubble { font-size: 13px; padding: 5px 10px; }
+  .intro-en, .intro-ar { font-size: clamp(56px, 19vh, 110px); }
+  .intro-sub { margin-top: 8px; font-size: 12px; }
+  .intro-tags { margin-top: 10px; gap: 6px; }
+  .intro-tags a { font-size: 12px; padding: 5px 11px; }
+  .intro-cue { margin-top: 8px; }
+  .intro-cue svg { width: 24px; height: 28px; }
+}
+@media (max-height: 560px) and (min-width: 601px) { .intro { padding-top: 10px; padding-bottom: 12px; } }
