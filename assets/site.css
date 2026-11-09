@@ -644,3 +644,11 @@ a.project-media { text-decoration: none; }
 .stop-lab:hover .where { color: var(--accent); }
 :root[data-theme="dark"] .stop-lab img { filter: brightness(1.25); }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .stop-lab img { filter: brightness(1.25); } }
+
+/* "You are here": one solid Kerma-red pill with a black rim and silver inner line, so the text isn't split by bands */
+.stop.is-now .stop-card { padding-top: 22px; }
+.stop.is-now .stop-card::after {
+  top: -14px; z-index: 2; background: var(--kerma-red); color: #fff7ef; text-shadow: none;
+  font-size: 11.5px; font-weight: 700; letter-spacing: .06em; line-height: 1; white-space: nowrap;
+  padding: 7px 12px; border-radius: 999px;
+  box-shadow: 0 0 0 2px var(--kerma-black), inset 0 0 0 1.5px var(--kerma-silver); }
