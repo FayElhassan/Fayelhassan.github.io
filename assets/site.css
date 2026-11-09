@@ -618,3 +618,11 @@ a.project-media { text-decoration: none; }
 .intro-tags a:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
 @media (max-width: 600px) { .intro-tags { gap: 8px; } .intro-tags a { font-size: 12px; padding: 6px 12px; } }
 @media (prefers-reduced-motion: reduce) { .intro-tags { animation: none !important; } }
+
+/* Faint Nubian wall pattern behind the opening screen only */
+.intro::before { content: ""; position: absolute; inset: 0; z-index: -2; pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2256%22%20height%3D%2256%22%20viewBox%3D%220%200%2056%2056%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%2323408e%22%20stroke-width%3D%221.6%22%3E%3Cpath%20d%3D%22M28%208%2048%2028%2028%2048%208%2028Z%22/%3E%3Cpath%20d%3D%22M28%2018%2038%2028%2028%2038%2018%2028Z%22/%3E%3C/g%3E%3Cpath%20d%3D%22M26%2028%2028%2026%2030%2028%2028%2030Z%22%20fill%3D%22%23a63d1f%22/%3E%3Cpath%20d%3D%22M0%200h8L4%205zM48%200h8l-4%205zM0%2056h8l-4-5zM48%2056h8l-4-5z%22%20fill%3D%22%23d8952a%22/%3E%3Ccircle%20cx%3D%220%22%20cy%3D%2228%22%20r%3D%222%22%20fill%3D%22%23a63d1f%22/%3E%3Ccircle%20cx%3D%2256%22%20cy%3D%2228%22%20r%3D%222%22%20fill%3D%22%23a63d1f%22/%3E%3Ccircle%20cx%3D%2228%22%20cy%3D%220%22%20r%3D%222%22%20fill%3D%22%23a63d1f%22/%3E%3Ccircle%20cx%3D%2228%22%20cy%3D%2256%22%20r%3D%222%22%20fill%3D%22%23a63d1f%22/%3E%3C/svg%3E") center / 56px 56px repeat; opacity: .08;
+  -webkit-mask-image: radial-gradient(ellipse 60% 62% at 50% 46%, #000 0%, rgba(0,0,0,.55) 55%, transparent 100%);
+          mask-image: radial-gradient(ellipse 60% 62% at 50% 46%, #000 0%, rgba(0,0,0,.55) 55%, transparent 100%); }
+:root[data-theme="dark"] .intro::before { opacity: .12; filter: brightness(1.8) saturate(.8); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .intro::before { opacity: .12; filter: brightness(1.8) saturate(.8); } }
