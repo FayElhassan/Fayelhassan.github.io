@@ -636,3 +636,11 @@ a.project-media { text-decoration: none; }
   color: #fff7ef; text-shadow: 0 1px 0 rgba(0,0,0,.35); padding: 4px 10px 3px; }
 .nile-node.now { fill: var(--kerma-red); stroke: var(--kerma-black); stroke-width: 3; }
 .nile-node-ring { stroke: var(--kerma-red); }
+
+/* LiGHT logo on the current-position stop */
+.stop-lab { display: inline-flex; align-items: center; gap: 10px; margin-top: 6px; text-decoration: none; }
+.stop-lab img { height: 22px; width: auto; }
+.stop-lab .where { margin-top: 0; }
+.stop-lab:hover .where { color: var(--accent); }
+:root[data-theme="dark"] .stop-lab img { filter: brightness(1.25); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .stop-lab img { filter: brightness(1.25); } }
