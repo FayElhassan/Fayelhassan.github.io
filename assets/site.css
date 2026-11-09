@@ -626,3 +626,13 @@ a.project-media { text-decoration: none; }
           mask-image: radial-gradient(ellipse 60% 62% at 50% 46%, #000 0%, rgba(0,0,0,.55) 55%, transparent 100%); }
 :root[data-theme="dark"] .intro::before { opacity: .12; filter: brightness(1.8) saturate(.8); }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .intro::before { opacity: .12; filter: brightness(1.8) saturate(.8); } }
+
+/* Kerma black-topped red ware (Kingdom of Kush): polished black rim, silvery band, red-brown body */
+:root { --kerma-black: #1c1414; --kerma-silver: #b9b2aa; --kerma-red: #8f3b22; }
+.kerma { width: 120px; height: 12px; margin-top: 16px; border-radius: 2px;
+  background: linear-gradient(var(--kerma-black) 0 30%, var(--kerma-silver) 30% 42%, var(--kerma-red) 42% 100%); }
+.stop.is-now .stop-card::after {
+  background: linear-gradient(var(--kerma-black) 0 34%, var(--kerma-silver) 34% 44%, var(--kerma-red) 44% 100%);
+  color: #fff7ef; text-shadow: 0 1px 0 rgba(0,0,0,.35); padding: 4px 10px 3px; }
+.nile-node.now { fill: var(--kerma-red); stroke: var(--kerma-black); stroke-width: 3; }
+.nile-node-ring { stroke: var(--kerma-red); }
