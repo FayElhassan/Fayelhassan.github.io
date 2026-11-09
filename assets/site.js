@@ -19,7 +19,8 @@
     toggle.addEventListener("click", function () {
       var open = links.classList.toggle("open");
       toggle.setAttribute("aria-expanded", open);
-      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      var ar = document.documentElement.lang === "ar";
+      toggle.setAttribute("aria-label", open ? (ar ? "إغلاق القائمة" : "Close menu") : (ar ? "فتح القائمة" : "Open menu"));
     });
     links.addEventListener("click", function (e) {
       if (e.target.tagName === "A") { links.classList.remove("open"); toggle.setAttribute("aria-expanded", "false"); }
@@ -103,8 +104,9 @@ document.querySelectorAll(".tedx-player").forEach(function (btn) {
     function set(open) {
       extra.forEach(function (el) { el.classList.toggle("is-collapsed", !open); });
       btn.setAttribute("aria-expanded", open);
-      btn.innerHTML = open ? "Show less <span aria-hidden=\"true\">↑</span>"
-        : (list.getAttribute("data-more") ? list.getAttribute("data-more") + " (" + extra.length + ")" : "Show " + extra.length + " more " + label) + " <span aria-hidden=\"true\">↓</span>";
+      var ar = document.documentElement.lang === "ar";
+      btn.innerHTML = open ? (ar ? "عرض أقل" : "Show less") + " <span aria-hidden=\"true\">↑</span>"
+        : (list.getAttribute("data-more") ? list.getAttribute("data-more") + " (" + extra.length + ")" : ar ? "عرض المزيد من ال" + label + " (" + extra.length + ")" : "Show " + extra.length + " more " + label) + " <span aria-hidden=\"true\">↓</span>";
     }
     list._setCollapsed = function (collapsed) { set(!collapsed); btn.hidden = false; };
     list._expandForFilter = function () { extra.forEach(function (el) { el.classList.remove("is-collapsed"); }); btn.hidden = true; };
@@ -191,7 +193,8 @@ document.querySelectorAll(".tedx-player").forEach(function (btn) {
     var W = nile.clientWidth, H = nile.clientHeight;
     if (!W || !H) return;
     svg.setAttribute("viewBox", "0 0 " + W + " " + H);
-    var mobile = W < 700, cx = mobile ? 26 : W / 2, amp = mobile ? 10 : 64;
+    var rtl = document.documentElement.dir === "rtl";
+    var mobile = W < 700, cx = mobile ? (rtl ? W - 26 : 26) : W / 2, amp = mobile ? 10 : 64;
     boatScale = mobile ? .72 : 1.3;
     var pts = [centerY(nile.querySelector(".nile-source"))]
       .concat(stops.map(function (s) { return centerY(s.querySelector(".stop-card")); }))
@@ -221,7 +224,7 @@ document.querySelectorAll(".tedx-player").forEach(function (btn) {
       return lengthAtY(y);
     });
     if (!mobile) stops.forEach(function (s, i) {   // date palms on the empty bank opposite each card
-      var side = i % 2 === 0 ? 1 : -1, y = pts[i + 1];
+      var side = (i % 2 === 0 ? 1 : -1) * (rtl ? -1 : 1), y = pts[i + 1];
       [0, 1].forEach(function (k) {
         if (k && i % 2) return;
         var h = k ? 62 : 88, w = h * 70 / 82;

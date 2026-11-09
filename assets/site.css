@@ -714,3 +714,60 @@ a.project-media { text-decoration: none; }
   .intro-cue svg { width: 24px; height: 28px; }
 }
 @media (max-height: 560px) and (min-width: 601px) { .intro { padding-top: 10px; padding-bottom: 12px; } }
+
+/* ================= Language switch ================= */
+.nav-links .lang-switch { margin-left: 4px; border: 1px solid var(--line); font-family: "IBM Plex Sans Arabic", "Amiri", var(--sans); }
+.nav-links .lang-switch[lang="en"] { font-family: var(--sans); }
+@media (max-width: 1000px) { .nav-links .lang-switch { margin: 8px 0 0; text-align: center; } }
+
+/* ================= Arabic, right-to-left ================= */
+:root[lang="ar"] {
+  --serif: "Amiri", "Fraunces", Georgia, serif;
+  --sans: "IBM Plex Sans Arabic", "Inter", system-ui, sans-serif;
+}
+:root[lang="ar"] body { line-height: 1.85; }
+:root[lang="ar"] h1, :root[lang="ar"] h2, :root[lang="ar"] h3 { font-weight: 700; letter-spacing: 0; line-height: 1.35; }
+/* Arabic letters must join: no tracking, no capitalisation tricks */
+:root[lang="ar"] .kicker, :root[lang="ar"] .eyebrow, :root[lang="ar"] .tag, :root[lang="ar"] .col-h,
+:root[lang="ar"] .stop-place, :root[lang="ar"] .c-card small, :root[lang="ar"] .meet h3, :root[lang="ar"] .tedx-kicker,
+:root[lang="ar"] .intro-cue, :root[lang="ar"] .award-yr, :root[lang="ar"] .nile-source span, :root[lang="ar"] .intro-tags a,
+:root[lang="ar"] .confluence text { letter-spacing: 0; text-transform: none; }
+:root[lang="ar"] .intro-cue { font-size: 13px; }
+:root[lang="ar"] .lede { font-size: 20px; line-height: 1.9; }
+:root[lang="ar"] .hero .hero-title { line-height: 1.3; }
+:root[lang="ar"] .pubs, :root[lang="ar"] .pubs * { font-family: "Inter", system-ui, sans-serif; }
+:root[lang="ar"] .pubs h3 { font-family: "Fraunces", Georgia, serif; font-weight: 600; }
+:root[lang="ar"] .intro-sub { direction: ltr; }
+/* mirror the opening artwork and portrait */
+[dir="rtl"] .hero-art { left: auto; right: -6%; transform: scaleX(-1); }
+[dir="rtl"] .hero-photo img { margin-left: 8px; margin-right: auto; }
+[dir="rtl"] .hero-photo figcaption { text-align: left; }
+[dir="rtl"] .confluence { direction: ltr; }
+[dir="rtl"] .c-arrow { transform: scaleX(-1); }
+[dir="rtl"] .c-card:hover .c-arrow { transform: scaleX(-1) translateX(3px); }
+[dir="rtl"] .nav-links .nav-cv, [dir="rtl"] .nav-links .lang-switch { margin-left: 0; margin-right: 4px; }
+[dir="rtl"] .theme { margin-left: 0; margin-right: 4px; }
+[dir="rtl"] .brand .ar { margin-inline-start: 8px; }
+[dir="rtl"] .roles li { padding: 14px 20px 14px 0; }
+[dir="rtl"] .roles li::before { left: auto; right: 2px; }
+[dir="rtl"] .award { border-left: 1px solid var(--line); border-right: 4px solid var(--saffron); }
+[dir="rtl"] .award:nth-child(3n+2) { border-right-color: var(--indigo); }
+[dir="rtl"] .award:nth-child(3n) { border-right-color: var(--accent); }
+/* Nile journey: cards face the river from the other side */
+[dir="rtl"] .stop:nth-child(odd) .stop-card { text-align: left; }
+[dir="rtl"] .stop:nth-child(even) .stop-card { text-align: right; }
+[dir="rtl"] .stop.is-now:nth-child(odd) .stop-card::after { left: auto; right: 14px; }
+[dir="rtl"] .stop.is-now:nth-child(even) .stop-card::after { right: auto; left: 14px; }
+[dir="rtl"] .me-bubble { left: auto; right: calc(100% - 4px); border-radius: 14px 14px 3px 14px; transform-origin: 100% 100%; }
+@media (max-width: 760px) {
+  [dir="rtl"] .stop:nth-child(odd) .stop-card, [dir="rtl"] .stop:nth-child(even) .stop-card { text-align: right; }
+  [dir="rtl"] .stop.is-now:nth-child(odd) .stop-card::after, [dir="rtl"] .stop.is-now:nth-child(even) .stop-card::after { right: auto; left: 14px; }
+  [dir="rtl"] .nile-source, [dir="rtl"] .nile-mouth { margin-left: 0; margin-right: 44px; text-align: right; padding-left: 0; padding-right: 12px; }
+}
+@media (max-width: 600px) {
+  [dir="rtl"] .me-bubble { right: auto; left: 50%; border-radius: 12px; }
+}
+/* Skip link: hidden without pushing it off-screen (works in both LTR and RTL) */
+.skip { left: 16px; top: 8px; z-index: 100; clip-path: inset(50%); width: 1px; height: 1px; overflow: hidden; white-space: nowrap; }
+.skip:focus { clip-path: none; width: auto; height: auto; overflow: visible; background: var(--card); padding: 8px 12px; border-radius: 8px; }
+[dir="rtl"] .skip { left: auto; right: 16px; }

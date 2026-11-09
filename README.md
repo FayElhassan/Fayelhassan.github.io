@@ -11,3 +11,13 @@ Personal site of Fay Majid Elhassan, served by GitHub Pages as plain static file
 Preview locally: `python3 -m http.server 8000`, then open http://localhost:8000
 
 After editing `assets/site.css` or `assets/site.js`, bump the `?v=` number on their links in `index.html` so browsers fetch the new files.
+
+## Arabic version (`/ar/`)
+
+`ar/index.html` is generated from `index.html`; don't edit it by hand. After changing the English page, run:
+
+```
+python3 tools/build_ar.py
+```
+
+Translations live in `tools/build_ar.py`. Publication titles, authors and venues stay in English. The script lists any new English text that still needs an Arabic translation.
