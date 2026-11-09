@@ -652,3 +652,10 @@ a.project-media { text-decoration: none; }
   font-size: 11.5px; font-weight: 700; letter-spacing: .06em; line-height: 1; white-space: nowrap;
   padding: 7px 12px; border-radius: 999px;
   box-shadow: 0 0 0 2px var(--kerma-black), inset 0 0 0 1.5px var(--kerma-silver); }
+
+/* "A project of LiGHT" on the MOOVE card */
+.from-lab { display: inline-flex; align-items: center; gap: 8px; margin-top: 4px; text-decoration: none; color: var(--ink-3); font-size: 12px; letter-spacing: .04em; }
+.from-lab img { height: 16px; width: auto; }
+.project-body .more + .from-lab { margin-top: -2px; }
+:root[data-theme="dark"] .from-lab img { filter: brightness(1.25); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .from-lab img { filter: brightness(1.25); } }
