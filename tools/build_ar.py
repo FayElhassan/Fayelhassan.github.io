@@ -270,8 +270,8 @@ def build():
     s = re.sub(r'(href|src)="(assets|images|files)/', r'\1="../\2/', s)
     s = s.replace('href="/images/', 'href="../images/')
     # language switch points back to English
-    s = s.replace('<a class="lang-switch" href="ar/" hreflang="ar" lang="ar">العربية</a>',
-                  '<a class="lang-switch" href="../" hreflang="en" lang="en">English</a>', 1)
+    s = re.sub(r'<a class="lang-switch" href="ar/" hreflang="ar" lang="ar" title="[^"]*">(<svg.*?</svg>)<span>العربية</span></a>',
+               r'<a class="lang-switch" href="../" hreflang="en" lang="en" title="Read in English · اقرأ بالإنجليزية">\1<span>English</span></a>', s, count=1, flags=re.S)
     # blocks with markup
     for pat, rep in BLOCKS:
         s, n = re.subn(pat, rep, s, count=1, flags=re.S)
