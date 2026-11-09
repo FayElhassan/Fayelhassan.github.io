@@ -163,6 +163,7 @@ TEXT = {
     "and we'll find a time.": "وسنجد وقتًا مناسبًا.",
     "Made with love from Sudan.": "صُنع بحبّ من السودان.",
     "Back to top ↑": "العودة للأعلى ↑",
+    "Cookie settings": "إعدادات ملفات تعريف الارتباط",
     "University of Khartoum · 2022": "جامعة الخرطوم · 2022",
     "I Can't Believe It's Not Safer (spotlight talk)": "I Can't Believe It's Not Safer (عرض مميز)",
     "ICBINB Workshop, ICLR 2026 · Rio de Janeiro, Brazil": "ورشة ICBINB، ICLR 2026 · ريو دي جانيرو، البرازيل",

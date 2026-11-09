@@ -21,3 +21,12 @@ python3 tools/build_ar.py
 ```
 
 Translations live in `tools/build_ar.py`. Publication titles, authors and venues stay in English. The script lists any new English text that still needs an Arabic translation.
+
+## Analytics
+
+`assets/analytics.js` is switched on by two attributes on its `<script>` tag in `index.html`:
+
+- `data-goatcounter="your-code"`: cookie-free visit counts (always on), plus a "section/…" event the first time a visitor reaches each section.
+- `data-clarity="project-id"`: Microsoft Clarity heatmaps and session replays, loaded only after the visitor accepts the cookie banner. The footer's "Cookie settings" link reopens the banner.
+
+Leave an attribute empty to switch that service off. Nothing is tracked on localhost. After changing them, run `python3 tools/build_ar.py` so the Arabic page gets the same IDs.
