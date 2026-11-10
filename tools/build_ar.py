@@ -41,8 +41,6 @@ TEXT = {
     "What I work on": "ما أعمل عليه",
     "Participatory clinical evaluation": "التقييم السريري التشاركي",
     "Human-centred alignment &amp; safety": "مواءمة وسلامة محورها الإنسان",
-    "The answer clinicians prefer isn't always the safest. I study where the two diverge and what that means for aligning medical models.":
-        "الإجابة التي يفضّلها الأطباء ليست دائمًا الأكثر أمانًا. أدرس أين يفترق الاثنان، وما يعنيه ذلك لمواءمة النماذج الطبية.",
     "Trustworthy &amp; open models": "نماذج موثوقة ومفتوحة",
     "Inspectable Bayesian reasoning, fully auditable open clinical LLMs, and watermarks embedded in model weights.":
         "استدلال بايزي قابل للفحص، ونماذج لغوية سريرية مفتوحة قابلة للتدقيق بالكامل، وعلامات مائية مدمجة في أوزان النماذج.",
@@ -91,7 +89,7 @@ TEXT = {
     "Watch on YouTube →": "شاهد على يوتيوب ←",
     "Leadership &amp; volunteering": "القيادة والتطوع",
     "IEEE Sudan": "IEEE السودان",
-    "Chairman · 2024–present": "الرئاسة · 2024 حتى الآن",
+    "Chair · 2024–present": "الرئاسة · 2024 حتى الآن",
     "Co-founder and Chair of Communication &amp; Documentation · 2024–present": "مشاركة في التأسيس ورئاسة لجنة التواصل والتوثيق · 2024 حتى الآن",
     "Organiser for the main Indaba and adviser to IndabaX Sudan · 2022–25": "التنظيم في المؤتمر الرئيسي والاستشارة لـ IndabaX السودان · 2022–2025",
     "Co-founder of the Women in Machine Learning &amp; Data Science chapter · 2021–present": "مشاركة في تأسيس فرع «نساء في تعلّم الآلة وعلم البيانات» · 2021 حتى الآن",
@@ -166,7 +164,7 @@ TEXT = {
     "Cookie settings": "إعدادات ملفات تعريف الارتباط",
     "University of Khartoum · 2022": "جامعة الخرطوم · 2022",
     "I Can't Believe It's Not Safer (spotlight talk)": "I Can't Believe It's Not Safer (عرض مميز)",
-    "ICBINB Workshop, ICLR 2026 · Rio de Janeiro, Brazil": "ورشة ICBINB، ICLR 2026 · ريو دي جانيرو، البرازيل",
+    "I Can't Believe It's Not Better (ICBINB) Workshop, ICLR 2026 · Rio de Janeiro, Brazil": "ورشة I Can't Believe It's Not Better (ICBINB)، ICLR 2026 · ريو دي جانيرو، البرازيل",
     "IEEE Region 8 Women in Engineering Panel": "جلسة IEEE Region 8 للنساء في الهندسة",
     "Panelist with Hazar Oklah and Dr. Neylan Tokerler · IEEE R8 Central European Students &amp; Young Professionals Congress (CEuSYP'25), Istanbul":
         "مشاركة في الجلسة مع هزار عقلة ود. نيلان توكرلر · مؤتمر IEEE R8 لطلاب وشباب وسط أوروبا (CEuSYP'25)، إسطنبول",
@@ -208,11 +206,12 @@ BLOCKS = [
     (r'<ul class="news-list">.*?</ul>',
      '<ul class="news-list">\n'
      '    <li><time>2026</time><span>قُبلت ورقة <strong>MoBayes</strong> في <strong>المسار الرئيسي لمؤتمر NeurIPS 2026</strong> (بتأليف أول مشترك).</span></li>\n'
-     '    <li><time>2026</time><span><strong>عرض مميز (أفضل 5%)</strong> في ورشة ICBINB ضمن ICLR 2026، ريو دي جانيرو.</span></li>\n'
      '    <li><time>2026</time><span>نُشر بروتوكول <strong>hypMOOVE-PHC</strong> على medRxiv.</span></li>\n'
      '  </ul>'),
-    (r'<p>Clinicians worldwide rate LLM answers to realistic cases on <a href="https://jointhemoove.org/"><b>MOOVE</b></a>, blind to the model\. I turn those judgements into rankings and consensus\.</p>',
-     '<p>يقيّم أطباء من حول العالم إجابات النماذج اللغوية على حالات واقعية عبر <a href="https://jointhemoove.org/"><b>MOOVE</b></a> دون معرفة النموذج. وأحوّل هذه الأحكام إلى تصنيفات وإجماع.</p>'),
+    (r'<p>Practising clinicians, not crowdworkers or AI judges, rate LLM answers to realistic cases on <a href="https://jointhemoove.org/"><b>MOOVE</b></a>, blind to the model\. They define what a good answer is; I turn their judgements into rankings and consensus\.</p>',
+     '<p>يقيّم أطباء ممارسون، لا عمّال حشد ولا نماذج حَكَمة، إجابات النماذج اللغوية على حالات واقعية عبر <a href="https://jointhemoove.org/"><b>MOOVE</b></a> دون معرفة النموذج. هم من يحدّد ما الإجابة الجيدة، وأنا أحوّل أحكامهم إلى تصنيفات وإجماع.</p>'),
+    (r'<p>The answer clinicians prefer isn\'t always the safest\..*?\(<a href="#publications">ICLR 2026 spotlight</a>\)\.</p>',
+     '<p>الإجابة التي يفضّلها الأطباء ليست دائمًا الأكثر أمانًا. من 18,685 تصويتًا ثنائيًا أعمى أدلى بها 736 طبيبًا في أكثر من 28 دولة على 13 نموذجًا، وجدنا أن تصنيفات التفضيل لا تعكس السلامة بشكل موثوق، لذا أبني تصنيفات تعيد السلامة السريرية إلى الصدارة (<a href="#publications">عرض مميز في ICLR 2026</a>).</p>'),
     (r'<p>Previously led <a href="https://www.antibiogo.org/"><b>Antibiogo</b></a> research with MSF\. Earlier work: deep RL for microgrids in rural Sudan, greenhouse control and weather forecasting\.</p>',
      '<p>قُدتُ سابقًا أبحاث <a href="https://www.antibiogo.org/"><b>Antibiogo</b></a> مع أطباء بلا حدود. ومن أعمالي الأقدم: التعلّم المعزّز العميق للشبكات الصغيرة في ريف السودان، والتحكّم في الدفيئات، والتنبؤ الجوي.</p>'),
     (r'<p class="section-sub">\* marks equal contribution\. Full list on (<a [^>]+>)Google Scholar</a>\.</p>',
