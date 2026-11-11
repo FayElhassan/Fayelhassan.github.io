@@ -145,7 +145,7 @@ TEXT = {
     "…and the river keeps flowing.": "…والنهر ما زال يجري.",
     "Certifications": "الشهادات المهنية",
     "Languages": "اللغات",
-    "English · Arabic · French": "الإنجليزية · العربية · الفرنسية",
+    "English · Arabic · Turkish": "الإنجليزية · العربية · التركية",
     "Let's talk": "لنتحدّث",
     "Research &amp; collaborations": "الأبحاث والتعاون",
     "I'm always glad to hear from people working on clinical AI evaluation, participatory design, or the alignment and safety of medical models, especially if you'd like to collaborate on MOOVE. Email is the best way to reach me.":
